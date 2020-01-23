@@ -31,6 +31,25 @@ namespace RentalTrackingDLL
         FindRentalTransactionsCloseDateDataSet aFindRentalTransactionsCloseDateDataSet;
         FindRentalTransactionsCloseDateDataSetTableAdapters.FindRentalTransactionsDateCloseTableAdapter aFindRentalTransactionsCloseDateTableAdapter;
 
+        FindRentalTransactionByProjectIDDataSet aFindRentalTransactionByProjectIDDataSet;
+        FindRentalTransactionByProjectIDDataSetTableAdapters.FindRentalTransasctionByProjectIDTableAdapter aFindRentalTransactionByProjectIDTableAdapter;
+
+        public FindRentalTransactionByProjectIDDataSet FindRentalTransactionByProjectID(int intProjectID)
+        {
+            try
+            {
+                aFindRentalTransactionByProjectIDDataSet = new FindRentalTransactionByProjectIDDataSet();
+                aFindRentalTransactionByProjectIDTableAdapter = new FindRentalTransactionByProjectIDDataSetTableAdapters.FindRentalTransasctionByProjectIDTableAdapter();
+                aFindRentalTransactionByProjectIDTableAdapter.Fill(aFindRentalTransactionByProjectIDDataSet.FindRentalTransasctionByProjectID, intProjectID);
+
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Rental Tracking By Project ID " + Ex.Message);
+            }
+
+            return aFindRentalTransactionByProjectIDDataSet;
+        }
         public FindRentalTransactionsCloseDateDataSet FindRentalTransactionCloseDate(DateTime datLimitingDate)
         {
             try
