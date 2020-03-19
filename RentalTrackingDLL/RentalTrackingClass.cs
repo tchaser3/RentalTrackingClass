@@ -34,6 +34,74 @@ namespace RentalTrackingDLL
         FindRentalTransactionByProjectIDDataSet aFindRentalTransactionByProjectIDDataSet;
         FindRentalTransactionByProjectIDDataSetTableAdapters.FindRentalTransasctionByProjectIDTableAdapter aFindRentalTransactionByProjectIDTableAdapter;
 
+        RentalTrackingUpdatesDataSet aRentalTrackingUpdatesDataSet;
+        RentalTrackingUpdatesDataSetTableAdapters.rentaltrackingupdatesTableAdapter aRentalTrackingUpdatesTableAdapter;
+
+        InsertRentalTrackingUpdateEntryTableAdapters.QueriesTableAdapter aInsertRentalTrackingUpdateTableAdapter;
+
+        FindRentalTrackingUpdateByRentalTrackingIDDataSet aFindRentalTrackingUpdateByRentalTrackingIDDataSet;
+        FindRentalTrackingUpdateByRentalTrackingIDDataSetTableAdapters.FindRentalTrackingUpdateByRentalTrackingIDTableAdapter aFindRentalTrackingUpdateByRentalTrackingIDTableAdapter;
+
+        public FindRentalTrackingUpdateByRentalTrackingIDDataSet FindRentalTrackingUpdateByRentalTrackingID(int intRentalTrackingID)
+        {
+            try
+            {
+                aFindRentalTrackingUpdateByRentalTrackingIDDataSet = new FindRentalTrackingUpdateByRentalTrackingIDDataSet();
+                aFindRentalTrackingUpdateByRentalTrackingIDTableAdapter = new FindRentalTrackingUpdateByRentalTrackingIDDataSetTableAdapters.FindRentalTrackingUpdateByRentalTrackingIDTableAdapter();
+                aFindRentalTrackingUpdateByRentalTrackingIDTableAdapter.Fill(aFindRentalTrackingUpdateByRentalTrackingIDDataSet.FindRentalTrackingUpdateByRentalTrackingID, intRentalTrackingID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Rental Tracking Update By Rental Tracking ID " + Ex.Message);
+            }
+
+            return aFindRentalTrackingUpdateByRentalTrackingIDDataSet;
+        }
+        public bool InsertRentalTrackingUpdate(int intRentalTrackingID, DateTime datTransactionDate, int intEmployeeID, string strUpdateNotes)
+        {
+            bool blnFatalError = false;
+
+            try
+            {
+                aInsertRentalTrackingUpdateTableAdapter = new InsertRentalTrackingUpdateEntryTableAdapters.QueriesTableAdapter();
+                aInsertRentalTrackingUpdateTableAdapter.InsertRentalTrackingUpdate(intRentalTrackingID, datTransactionDate, intEmployeeID, strUpdateNotes);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Insert Rental Tracking Update " + Ex.Message);
+
+                blnFatalError = true;
+            }
+
+            return blnFatalError;
+        }
+        public RentalTrackingUpdatesDataSet GetRentalTrackingUpdatesInfo()
+        {
+            try
+            {
+                aRentalTrackingUpdatesDataSet = new RentalTrackingUpdatesDataSet();
+                aRentalTrackingUpdatesTableAdapter = new RentalTrackingUpdatesDataSetTableAdapters.rentaltrackingupdatesTableAdapter();
+                aRentalTrackingUpdatesTableAdapter.Fill(aRentalTrackingUpdatesDataSet.rentaltrackingupdates);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Get Rental Tracking Updates Info " + Ex.Message);
+            }
+
+            return aRentalTrackingUpdatesDataSet;
+        }
+        public void UpdateRentalTrackingUpdateDB(RentalTrackingUpdatesDataSet aRentalTrackingUpdatesDataSet)
+        {
+            try
+            {
+                aRentalTrackingUpdatesTableAdapter = new RentalTrackingUpdatesDataSetTableAdapters.rentaltrackingupdatesTableAdapter();
+                aRentalTrackingUpdatesTableAdapter.Update(aRentalTrackingUpdatesDataSet.rentaltrackingupdates);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Update Rental Tracking Updates DB " + Ex.Message);
+            }
+        }
         public FindRentalTransactionByProjectIDDataSet FindRentalTransactionByProjectID(int intProjectID)
         {
             try
@@ -98,14 +166,14 @@ namespace RentalTrackingDLL
 
             return blnFatalError;
         }
-        public bool InsertRentalTrackingTransaction(DateTime datRequestingDate, int intPONumber, int intEmployeeID, int intVendorID, DateTime datPickupDate, DateTime datExpirationDate, int intRequestedDays, decimal decTotalCost)
+        public bool InsertRentalTrackingTransaction(DateTime datRequestingDate, int intPONumber, int intEmployeeID, int intVendorID, DateTime datPickupDate, DateTime datExpirationDate, int intRequestedDays, decimal decTotalCost, int intProjectID, decimal decProjectedCost)
         {
             bool blnFatalError = false;
 
             try
             {
                 aInsertRentalTrackingTransactionTableAdapter = new InsertRentalTrackingTransactionEntryTableAdapters.QueriesTableAdapter();
-                aInsertRentalTrackingTransactionTableAdapter.InsertRentalTrackingTransaction(datRequestingDate, intPONumber, intEmployeeID, intVendorID, datPickupDate, datExpirationDate, intRequestedDays, decTotalCost);
+                aInsertRentalTrackingTransactionTableAdapter.InsertRentalTrackingTransaction(datRequestingDate, intPONumber, intEmployeeID, intVendorID, datPickupDate, datExpirationDate, intRequestedDays, decTotalCost, intProjectID, decProjectedCost);
             }
             catch (Exception Ex)
             {

@@ -30,6 +30,7 @@
               <Mapping SourceColumn="RequestingDate1" DataSetColumn="RequestingDate1" />
               <Mapping SourceColumn="ExpirationDate" DataSetColumn="ExpirationDate" />
               <Mapping SourceColumn="ReturnedDate" DataSetColumn="ReturnedDate" />
+              <Mapping SourceColumn="ProjectedCost" DataSetColumn="ProjectedCost" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -70,6 +71,7 @@
               <xs:element name="RequestingDate1" msprop:Generator_ColumnVarNameInTable="columnRequestingDate1" msprop:Generator_ColumnPropNameInRow="RequestingDate1" msprop:Generator_ColumnPropNameInTable="RequestingDate1Column" msprop:Generator_UserColumnName="RequestingDate1" type="xs:dateTime" />
               <xs:element name="ExpirationDate" msprop:Generator_ColumnVarNameInTable="columnExpirationDate" msprop:Generator_ColumnPropNameInRow="ExpirationDate" msprop:Generator_ColumnPropNameInTable="ExpirationDateColumn" msprop:Generator_UserColumnName="ExpirationDate" type="xs:dateTime" />
               <xs:element name="ReturnedDate" msprop:Generator_ColumnVarNameInTable="columnReturnedDate" msprop:Generator_ColumnPropNameInRow="ReturnedDate" msprop:Generator_ColumnPropNameInTable="ReturnedDateColumn" msprop:Generator_UserColumnName="ReturnedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProjectedCost" msprop:Generator_ColumnVarNameInTable="columnProjectedCost" msprop:Generator_ColumnPropNameInRow="ProjectedCost" msprop:Generator_ColumnPropNameInTable="ProjectedCostColumn" msprop:Generator_UserColumnName="ProjectedCost" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

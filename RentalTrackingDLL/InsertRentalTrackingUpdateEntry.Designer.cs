@@ -20,15 +20,15 @@ namespace RentalTrackingDLL {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("InsertRentalTrackingTransactionEntry")]
+    [global::System.Xml.Serialization.XmlRootAttribute("InsertRentalTrackingUpdateEntry")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class InsertRentalTrackingTransactionEntry : global::System.Data.DataSet {
+    public partial class InsertRentalTrackingUpdateEntry : global::System.Data.DataSet {
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public InsertRentalTrackingTransactionEntry() {
+        public InsertRentalTrackingUpdateEntry() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -39,7 +39,7 @@ namespace RentalTrackingDLL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected InsertRentalTrackingTransactionEntry(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected InsertRentalTrackingUpdateEntry(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -112,7 +112,7 @@ namespace RentalTrackingDLL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            InsertRentalTrackingTransactionEntry cln = ((InsertRentalTrackingTransactionEntry)(base.Clone()));
+            InsertRentalTrackingUpdateEntry cln = ((InsertRentalTrackingUpdateEntry)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -175,9 +175,9 @@ namespace RentalTrackingDLL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "InsertRentalTrackingTransactionEntry";
+            this.DataSetName = "InsertRentalTrackingUpdateEntry";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/InsertRentalTrackingTransactionEntry.xsd";
+            this.Namespace = "http://tempuri.org/InsertRentalTrackingUpdateEntry.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         }
@@ -193,7 +193,7 @@ namespace RentalTrackingDLL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            InsertRentalTrackingTransactionEntry ds = new InsertRentalTrackingTransactionEntry();
+            InsertRentalTrackingUpdateEntry ds = new InsertRentalTrackingUpdateEntry();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -238,7 +238,7 @@ namespace RentalTrackingDLL {
         }
     }
 }
-namespace RentalTrackingDLL.InsertRentalTrackingTransactionEntryTableAdapters {
+namespace RentalTrackingDLL.InsertRentalTrackingUpdateEntryTableAdapters {
     
     
     /// <summary>
@@ -271,34 +271,28 @@ namespace RentalTrackingDLL.InsertRentalTrackingTransactionEntryTableAdapters {
             this._commandCollection = new global::System.Data.IDbCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::RentalTrackingDLL.Properties.Settings.Default.whsetracConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.InsertRentalTrackingTransaction";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.InsertRentalTrackingUpdate";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestingDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RentalTrackingID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VendorID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PickupDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExpirationDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoOfDaysRequested", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCost", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjectID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjectedCost", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UpdateNotes", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertRentalTrackingTransaction(global::System.Nullable<global::System.DateTime> RequestingDate, global::System.Nullable<int> PONumber, global::System.Nullable<int> EmployeeID, global::System.Nullable<int> VendorID, global::System.Nullable<global::System.DateTime> PickupDate, global::System.Nullable<global::System.DateTime> ExpirationDate, global::System.Nullable<int> NoOfDaysRequested, global::System.Nullable<decimal> TotalCost, global::System.Nullable<int> ProjectID, global::System.Nullable<decimal> ProjectedCost) {
+        public virtual int InsertRentalTrackingUpdate(global::System.Nullable<int> RentalTrackingID, global::System.Nullable<global::System.DateTime> TransactionDate, global::System.Nullable<int> EmployeeID, string UpdateNotes) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
-            if ((RequestingDate.HasValue == true)) {
-                command.Parameters[1].Value = ((System.DateTime)(RequestingDate.Value));
+            if ((RentalTrackingID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(RentalTrackingID.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((PONumber.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(PONumber.Value));
+            if ((TransactionDate.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(TransactionDate.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
@@ -309,47 +303,11 @@ namespace RentalTrackingDLL.InsertRentalTrackingTransactionEntryTableAdapters {
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((VendorID.HasValue == true)) {
-                command.Parameters[4].Value = ((int)(VendorID.Value));
-            }
-            else {
+            if ((UpdateNotes == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((PickupDate.HasValue == true)) {
-                command.Parameters[5].Value = ((System.DateTime)(PickupDate.Value));
-            }
             else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((ExpirationDate.HasValue == true)) {
-                command.Parameters[6].Value = ((System.DateTime)(ExpirationDate.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((NoOfDaysRequested.HasValue == true)) {
-                command.Parameters[7].Value = ((int)(NoOfDaysRequested.Value));
-            }
-            else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((TotalCost.HasValue == true)) {
-                command.Parameters[8].Value = ((decimal)(TotalCost.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((ProjectID.HasValue == true)) {
-                command.Parameters[9].Value = ((int)(ProjectID.Value));
-            }
-            else {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((ProjectedCost.HasValue == true)) {
-                command.Parameters[10].Value = ((decimal)(ProjectedCost.Value));
-            }
-            else {
-                command.Parameters[10].Value = global::System.DBNull.Value;
+                command.Parameters[4].Value = ((string)(UpdateNotes));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

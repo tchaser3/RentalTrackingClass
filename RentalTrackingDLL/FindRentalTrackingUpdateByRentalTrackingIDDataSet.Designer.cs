@@ -20,17 +20,17 @@ namespace RentalTrackingDLL {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FindRentalTransactionsCloseDateDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("FindRentalTrackingUpdateByRentalTrackingIDDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FindRentalTransactionsCloseDateDataSet : global::System.Data.DataSet {
+    public partial class FindRentalTrackingUpdateByRentalTrackingIDDataSet : global::System.Data.DataSet {
         
-        private FindRentalTransactionsDateCloseDataTable tableFindRentalTransactionsDateClose;
+        private FindRentalTrackingUpdateByRentalTrackingIDDataTable tableFindRentalTrackingUpdateByRentalTrackingID;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public FindRentalTransactionsCloseDateDataSet() {
+        public FindRentalTrackingUpdateByRentalTrackingIDDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace RentalTrackingDLL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected FindRentalTransactionsCloseDateDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected FindRentalTrackingUpdateByRentalTrackingIDDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace RentalTrackingDLL {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["FindRentalTransactionsDateClose"] != null)) {
-                    base.Tables.Add(new FindRentalTransactionsDateCloseDataTable(ds.Tables["FindRentalTransactionsDateClose"]));
+                if ((ds.Tables["FindRentalTrackingUpdateByRentalTrackingID"] != null)) {
+                    base.Tables.Add(new FindRentalTrackingUpdateByRentalTrackingIDDataTable(ds.Tables["FindRentalTrackingUpdateByRentalTrackingID"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace RentalTrackingDLL {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FindRentalTransactionsDateCloseDataTable FindRentalTransactionsDateClose {
+        public FindRentalTrackingUpdateByRentalTrackingIDDataTable FindRentalTrackingUpdateByRentalTrackingID {
             get {
-                return this.tableFindRentalTransactionsDateClose;
+                return this.tableFindRentalTrackingUpdateByRentalTrackingID;
             }
         }
         
@@ -127,7 +127,7 @@ namespace RentalTrackingDLL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FindRentalTransactionsCloseDateDataSet cln = ((FindRentalTransactionsCloseDateDataSet)(base.Clone()));
+            FindRentalTrackingUpdateByRentalTrackingIDDataSet cln = ((FindRentalTrackingUpdateByRentalTrackingIDDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace RentalTrackingDLL {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["FindRentalTransactionsDateClose"] != null)) {
-                    base.Tables.Add(new FindRentalTransactionsDateCloseDataTable(ds.Tables["FindRentalTransactionsDateClose"]));
+                if ((ds.Tables["FindRentalTrackingUpdateByRentalTrackingID"] != null)) {
+                    base.Tables.Add(new FindRentalTrackingUpdateByRentalTrackingIDDataTable(ds.Tables["FindRentalTrackingUpdateByRentalTrackingID"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace RentalTrackingDLL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableFindRentalTransactionsDateClose = ((FindRentalTransactionsDateCloseDataTable)(base.Tables["FindRentalTransactionsDateClose"]));
+            this.tableFindRentalTrackingUpdateByRentalTrackingID = ((FindRentalTrackingUpdateByRentalTrackingIDDataTable)(base.Tables["FindRentalTrackingUpdateByRentalTrackingID"]));
             if ((initTable == true)) {
-                if ((this.tableFindRentalTransactionsDateClose != null)) {
-                    this.tableFindRentalTransactionsDateClose.InitVars();
+                if ((this.tableFindRentalTrackingUpdateByRentalTrackingID != null)) {
+                    this.tableFindRentalTrackingUpdateByRentalTrackingID.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace RentalTrackingDLL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FindRentalTransactionsCloseDateDataSet";
+            this.DataSetName = "FindRentalTrackingUpdateByRentalTrackingIDDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FindRentalTransactionsCloseDateDataSet.xsd";
+            this.Namespace = "http://tempuri.org/FindRentalTrackingUpdateByRentalTrackingIDDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableFindRentalTransactionsDateClose = new FindRentalTransactionsDateCloseDataTable();
-            base.Tables.Add(this.tableFindRentalTransactionsDateClose);
+            this.tableFindRentalTrackingUpdateByRentalTrackingID = new FindRentalTrackingUpdateByRentalTrackingIDDataTable();
+            base.Tables.Add(this.tableFindRentalTrackingUpdateByRentalTrackingID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeFindRentalTransactionsDateClose() {
+        private bool ShouldSerializeFindRentalTrackingUpdateByRentalTrackingID() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace RentalTrackingDLL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FindRentalTransactionsCloseDateDataSet ds = new FindRentalTransactionsCloseDateDataSet();
+            FindRentalTrackingUpdateByRentalTrackingIDDataSet ds = new FindRentalTrackingUpdateByRentalTrackingIDDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,22 +270,16 @@ namespace RentalTrackingDLL {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void FindRentalTransactionsDateCloseRowChangeEventHandler(object sender, FindRentalTransactionsDateCloseRowChangeEvent e);
+        public delegate void FindRentalTrackingUpdateByRentalTrackingIDRowChangeEventHandler(object sender, FindRentalTrackingUpdateByRentalTrackingIDRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FindRentalTransactionsDateCloseDataTable : global::System.Data.TypedTableBase<FindRentalTransactionsDateCloseRow> {
+        public partial class FindRentalTrackingUpdateByRentalTrackingIDDataTable : global::System.Data.TypedTableBase<FindRentalTrackingUpdateByRentalTrackingIDRow> {
             
-            private global::System.Data.DataColumn columnRequestingDate;
-            
-            private global::System.Data.DataColumn columnPONumber;
-            
-            private global::System.Data.DataColumn columnAssignedProjectID;
-            
-            private global::System.Data.DataColumn columnProjectName;
+            private global::System.Data.DataColumn columnTransactionDate;
             
             private global::System.Data.DataColumn columnFirstName;
             
@@ -293,18 +287,12 @@ namespace RentalTrackingDLL {
             
             private global::System.Data.DataColumn columnHomeOffice;
             
-            private global::System.Data.DataColumn columnVendorName;
-            
-            private global::System.Data.DataColumn columnPickupDate;
-            
-            private global::System.Data.DataColumn columnNoOfDaysRequested;
-            
-            private global::System.Data.DataColumn columnProjectedCost;
+            private global::System.Data.DataColumn columnUpdateNotes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindRentalTransactionsDateCloseDataTable() {
-                this.TableName = "FindRentalTransactionsDateClose";
+            public FindRentalTrackingUpdateByRentalTrackingIDDataTable() {
+                this.TableName = "FindRentalTrackingUpdateByRentalTrackingID";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -312,7 +300,7 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal FindRentalTransactionsDateCloseDataTable(global::System.Data.DataTable table) {
+            internal FindRentalTrackingUpdateByRentalTrackingIDDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -329,40 +317,16 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected FindRentalTransactionsDateCloseDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected FindRentalTrackingUpdateByRentalTrackingIDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn RequestingDateColumn {
+            public global::System.Data.DataColumn TransactionDateColumn {
                 get {
-                    return this.columnRequestingDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PONumberColumn {
-                get {
-                    return this.columnPONumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AssignedProjectIDColumn {
-                get {
-                    return this.columnAssignedProjectID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ProjectNameColumn {
-                get {
-                    return this.columnProjectName;
+                    return this.columnTransactionDate;
                 }
             }
             
@@ -392,33 +356,9 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn VendorNameColumn {
+            public global::System.Data.DataColumn UpdateNotesColumn {
                 get {
-                    return this.columnVendorName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PickupDateColumn {
-                get {
-                    return this.columnPickupDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NoOfDaysRequestedColumn {
-                get {
-                    return this.columnNoOfDaysRequested;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ProjectedCostColumn {
-                get {
-                    return this.columnProjectedCost;
+                    return this.columnUpdateNotes;
                 }
             }
             
@@ -433,55 +373,49 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindRentalTransactionsDateCloseRow this[int index] {
+            public FindRentalTrackingUpdateByRentalTrackingIDRow this[int index] {
                 get {
-                    return ((FindRentalTransactionsDateCloseRow)(this.Rows[index]));
+                    return ((FindRentalTrackingUpdateByRentalTrackingIDRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event FindRentalTransactionsDateCloseRowChangeEventHandler FindRentalTransactionsDateCloseRowChanging;
+            public event FindRentalTrackingUpdateByRentalTrackingIDRowChangeEventHandler FindRentalTrackingUpdateByRentalTrackingIDRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event FindRentalTransactionsDateCloseRowChangeEventHandler FindRentalTransactionsDateCloseRowChanged;
+            public event FindRentalTrackingUpdateByRentalTrackingIDRowChangeEventHandler FindRentalTrackingUpdateByRentalTrackingIDRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event FindRentalTransactionsDateCloseRowChangeEventHandler FindRentalTransactionsDateCloseRowDeleting;
+            public event FindRentalTrackingUpdateByRentalTrackingIDRowChangeEventHandler FindRentalTrackingUpdateByRentalTrackingIDRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event FindRentalTransactionsDateCloseRowChangeEventHandler FindRentalTransactionsDateCloseRowDeleted;
+            public event FindRentalTrackingUpdateByRentalTrackingIDRowChangeEventHandler FindRentalTrackingUpdateByRentalTrackingIDRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddFindRentalTransactionsDateCloseRow(FindRentalTransactionsDateCloseRow row) {
+            public void AddFindRentalTrackingUpdateByRentalTrackingIDRow(FindRentalTrackingUpdateByRentalTrackingIDRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindRentalTransactionsDateCloseRow AddFindRentalTransactionsDateCloseRow(System.DateTime RequestingDate, int PONumber, string AssignedProjectID, string ProjectName, string FirstName, string LastName, string HomeOffice, string VendorName, System.DateTime PickupDate, int NoOfDaysRequested, decimal ProjectedCost) {
-                FindRentalTransactionsDateCloseRow rowFindRentalTransactionsDateCloseRow = ((FindRentalTransactionsDateCloseRow)(this.NewRow()));
+            public FindRentalTrackingUpdateByRentalTrackingIDRow AddFindRentalTrackingUpdateByRentalTrackingIDRow(System.DateTime TransactionDate, string FirstName, string LastName, string HomeOffice, string UpdateNotes) {
+                FindRentalTrackingUpdateByRentalTrackingIDRow rowFindRentalTrackingUpdateByRentalTrackingIDRow = ((FindRentalTrackingUpdateByRentalTrackingIDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        RequestingDate,
-                        PONumber,
-                        AssignedProjectID,
-                        ProjectName,
+                        TransactionDate,
                         FirstName,
                         LastName,
                         HomeOffice,
-                        VendorName,
-                        PickupDate,
-                        NoOfDaysRequested,
-                        ProjectedCost};
-                rowFindRentalTransactionsDateCloseRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFindRentalTransactionsDateCloseRow);
-                return rowFindRentalTransactionsDateCloseRow;
+                        UpdateNotes};
+                rowFindRentalTrackingUpdateByRentalTrackingIDRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFindRentalTrackingUpdateByRentalTrackingIDRow);
+                return rowFindRentalTrackingUpdateByRentalTrackingIDRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                FindRentalTransactionsDateCloseDataTable cln = ((FindRentalTransactionsDateCloseDataTable)(base.Clone()));
+                FindRentalTrackingUpdateByRentalTrackingIDDataTable cln = ((FindRentalTrackingUpdateByRentalTrackingIDDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -489,93 +423,67 @@ namespace RentalTrackingDLL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new FindRentalTransactionsDateCloseDataTable();
+                return new FindRentalTrackingUpdateByRentalTrackingIDDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnRequestingDate = base.Columns["RequestingDate"];
-                this.columnPONumber = base.Columns["PONumber"];
-                this.columnAssignedProjectID = base.Columns["AssignedProjectID"];
-                this.columnProjectName = base.Columns["ProjectName"];
+                this.columnTransactionDate = base.Columns["TransactionDate"];
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
                 this.columnHomeOffice = base.Columns["HomeOffice"];
-                this.columnVendorName = base.Columns["VendorName"];
-                this.columnPickupDate = base.Columns["PickupDate"];
-                this.columnNoOfDaysRequested = base.Columns["NoOfDaysRequested"];
-                this.columnProjectedCost = base.Columns["ProjectedCost"];
+                this.columnUpdateNotes = base.Columns["UpdateNotes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnRequestingDate = new global::System.Data.DataColumn("RequestingDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRequestingDate);
-                this.columnPONumber = new global::System.Data.DataColumn("PONumber", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPONumber);
-                this.columnAssignedProjectID = new global::System.Data.DataColumn("AssignedProjectID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAssignedProjectID);
-                this.columnProjectName = new global::System.Data.DataColumn("ProjectName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectName);
+                this.columnTransactionDate = new global::System.Data.DataColumn("TransactionDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTransactionDate);
                 this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFirstName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastName);
                 this.columnHomeOffice = new global::System.Data.DataColumn("HomeOffice", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHomeOffice);
-                this.columnVendorName = new global::System.Data.DataColumn("VendorName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVendorName);
-                this.columnPickupDate = new global::System.Data.DataColumn("PickupDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPickupDate);
-                this.columnNoOfDaysRequested = new global::System.Data.DataColumn("NoOfDaysRequested", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNoOfDaysRequested);
-                this.columnProjectedCost = new global::System.Data.DataColumn("ProjectedCost", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectedCost);
-                this.columnRequestingDate.AllowDBNull = false;
-                this.columnPONumber.AllowDBNull = false;
-                this.columnAssignedProjectID.AllowDBNull = false;
-                this.columnAssignedProjectID.MaxLength = 2147483647;
-                this.columnProjectName.AllowDBNull = false;
-                this.columnProjectName.MaxLength = 2147483647;
+                this.columnUpdateNotes = new global::System.Data.DataColumn("UpdateNotes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUpdateNotes);
+                this.columnTransactionDate.AllowDBNull = false;
                 this.columnFirstName.AllowDBNull = false;
                 this.columnFirstName.MaxLength = 2147483647;
                 this.columnLastName.AllowDBNull = false;
                 this.columnLastName.MaxLength = 2147483647;
                 this.columnHomeOffice.AllowDBNull = false;
                 this.columnHomeOffice.MaxLength = 2147483647;
-                this.columnVendorName.AllowDBNull = false;
-                this.columnVendorName.MaxLength = 2147483647;
-                this.columnPickupDate.AllowDBNull = false;
-                this.columnNoOfDaysRequested.AllowDBNull = false;
-                this.columnProjectedCost.AllowDBNull = false;
+                this.columnUpdateNotes.AllowDBNull = false;
+                this.columnUpdateNotes.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindRentalTransactionsDateCloseRow NewFindRentalTransactionsDateCloseRow() {
-                return ((FindRentalTransactionsDateCloseRow)(this.NewRow()));
+            public FindRentalTrackingUpdateByRentalTrackingIDRow NewFindRentalTrackingUpdateByRentalTrackingIDRow() {
+                return ((FindRentalTrackingUpdateByRentalTrackingIDRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FindRentalTransactionsDateCloseRow(builder);
+                return new FindRentalTrackingUpdateByRentalTrackingIDRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(FindRentalTransactionsDateCloseRow);
+                return typeof(FindRentalTrackingUpdateByRentalTrackingIDRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.FindRentalTransactionsDateCloseRowChanged != null)) {
-                    this.FindRentalTransactionsDateCloseRowChanged(this, new FindRentalTransactionsDateCloseRowChangeEvent(((FindRentalTransactionsDateCloseRow)(e.Row)), e.Action));
+                if ((this.FindRentalTrackingUpdateByRentalTrackingIDRowChanged != null)) {
+                    this.FindRentalTrackingUpdateByRentalTrackingIDRowChanged(this, new FindRentalTrackingUpdateByRentalTrackingIDRowChangeEvent(((FindRentalTrackingUpdateByRentalTrackingIDRow)(e.Row)), e.Action));
                 }
             }
             
@@ -583,8 +491,8 @@ namespace RentalTrackingDLL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.FindRentalTransactionsDateCloseRowChanging != null)) {
-                    this.FindRentalTransactionsDateCloseRowChanging(this, new FindRentalTransactionsDateCloseRowChangeEvent(((FindRentalTransactionsDateCloseRow)(e.Row)), e.Action));
+                if ((this.FindRentalTrackingUpdateByRentalTrackingIDRowChanging != null)) {
+                    this.FindRentalTrackingUpdateByRentalTrackingIDRowChanging(this, new FindRentalTrackingUpdateByRentalTrackingIDRowChangeEvent(((FindRentalTrackingUpdateByRentalTrackingIDRow)(e.Row)), e.Action));
                 }
             }
             
@@ -592,8 +500,8 @@ namespace RentalTrackingDLL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.FindRentalTransactionsDateCloseRowDeleted != null)) {
-                    this.FindRentalTransactionsDateCloseRowDeleted(this, new FindRentalTransactionsDateCloseRowChangeEvent(((FindRentalTransactionsDateCloseRow)(e.Row)), e.Action));
+                if ((this.FindRentalTrackingUpdateByRentalTrackingIDRowDeleted != null)) {
+                    this.FindRentalTrackingUpdateByRentalTrackingIDRowDeleted(this, new FindRentalTrackingUpdateByRentalTrackingIDRowChangeEvent(((FindRentalTrackingUpdateByRentalTrackingIDRow)(e.Row)), e.Action));
                 }
             }
             
@@ -601,14 +509,14 @@ namespace RentalTrackingDLL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.FindRentalTransactionsDateCloseRowDeleting != null)) {
-                    this.FindRentalTransactionsDateCloseRowDeleting(this, new FindRentalTransactionsDateCloseRowChangeEvent(((FindRentalTransactionsDateCloseRow)(e.Row)), e.Action));
+                if ((this.FindRentalTrackingUpdateByRentalTrackingIDRowDeleting != null)) {
+                    this.FindRentalTrackingUpdateByRentalTrackingIDRowDeleting(this, new FindRentalTrackingUpdateByRentalTrackingIDRowChangeEvent(((FindRentalTrackingUpdateByRentalTrackingIDRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveFindRentalTransactionsDateCloseRow(FindRentalTransactionsDateCloseRow row) {
+            public void RemoveFindRentalTrackingUpdateByRentalTrackingIDRow(FindRentalTrackingUpdateByRentalTrackingIDRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -617,7 +525,7 @@ namespace RentalTrackingDLL {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FindRentalTransactionsCloseDateDataSet ds = new FindRentalTransactionsCloseDateDataSet();
+                FindRentalTrackingUpdateByRentalTrackingIDDataSet ds = new FindRentalTrackingUpdateByRentalTrackingIDDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -635,7 +543,7 @@ namespace RentalTrackingDLL {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FindRentalTransactionsDateCloseDataTable";
+                attribute2.FixedValue = "FindRentalTrackingUpdateByRentalTrackingIDDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -679,58 +587,25 @@ namespace RentalTrackingDLL {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class FindRentalTransactionsDateCloseRow : global::System.Data.DataRow {
+        public partial class FindRentalTrackingUpdateByRentalTrackingIDRow : global::System.Data.DataRow {
             
-            private FindRentalTransactionsDateCloseDataTable tableFindRentalTransactionsDateClose;
+            private FindRentalTrackingUpdateByRentalTrackingIDDataTable tableFindRentalTrackingUpdateByRentalTrackingID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal FindRentalTransactionsDateCloseRow(global::System.Data.DataRowBuilder rb) : 
+            internal FindRentalTrackingUpdateByRentalTrackingIDRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableFindRentalTransactionsDateClose = ((FindRentalTransactionsDateCloseDataTable)(this.Table));
+                this.tableFindRentalTrackingUpdateByRentalTrackingID = ((FindRentalTrackingUpdateByRentalTrackingIDDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime RequestingDate {
+            public System.DateTime TransactionDate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableFindRentalTransactionsDateClose.RequestingDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableFindRentalTrackingUpdateByRentalTrackingID.TransactionDateColumn]));
                 }
                 set {
-                    this[this.tableFindRentalTransactionsDateClose.RequestingDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int PONumber {
-                get {
-                    return ((int)(this[this.tableFindRentalTransactionsDateClose.PONumberColumn]));
-                }
-                set {
-                    this[this.tableFindRentalTransactionsDateClose.PONumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string AssignedProjectID {
-                get {
-                    return ((string)(this[this.tableFindRentalTransactionsDateClose.AssignedProjectIDColumn]));
-                }
-                set {
-                    this[this.tableFindRentalTransactionsDateClose.AssignedProjectIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ProjectName {
-                get {
-                    return ((string)(this[this.tableFindRentalTransactionsDateClose.ProjectNameColumn]));
-                }
-                set {
-                    this[this.tableFindRentalTransactionsDateClose.ProjectNameColumn] = value;
+                    this[this.tableFindRentalTrackingUpdateByRentalTrackingID.TransactionDateColumn] = value;
                 }
             }
             
@@ -738,10 +613,10 @@ namespace RentalTrackingDLL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string FirstName {
                 get {
-                    return ((string)(this[this.tableFindRentalTransactionsDateClose.FirstNameColumn]));
+                    return ((string)(this[this.tableFindRentalTrackingUpdateByRentalTrackingID.FirstNameColumn]));
                 }
                 set {
-                    this[this.tableFindRentalTransactionsDateClose.FirstNameColumn] = value;
+                    this[this.tableFindRentalTrackingUpdateByRentalTrackingID.FirstNameColumn] = value;
                 }
             }
             
@@ -749,10 +624,10 @@ namespace RentalTrackingDLL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string LastName {
                 get {
-                    return ((string)(this[this.tableFindRentalTransactionsDateClose.LastNameColumn]));
+                    return ((string)(this[this.tableFindRentalTrackingUpdateByRentalTrackingID.LastNameColumn]));
                 }
                 set {
-                    this[this.tableFindRentalTransactionsDateClose.LastNameColumn] = value;
+                    this[this.tableFindRentalTrackingUpdateByRentalTrackingID.LastNameColumn] = value;
                 }
             }
             
@@ -760,54 +635,21 @@ namespace RentalTrackingDLL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string HomeOffice {
                 get {
-                    return ((string)(this[this.tableFindRentalTransactionsDateClose.HomeOfficeColumn]));
+                    return ((string)(this[this.tableFindRentalTrackingUpdateByRentalTrackingID.HomeOfficeColumn]));
                 }
                 set {
-                    this[this.tableFindRentalTransactionsDateClose.HomeOfficeColumn] = value;
+                    this[this.tableFindRentalTrackingUpdateByRentalTrackingID.HomeOfficeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string VendorName {
+            public string UpdateNotes {
                 get {
-                    return ((string)(this[this.tableFindRentalTransactionsDateClose.VendorNameColumn]));
+                    return ((string)(this[this.tableFindRentalTrackingUpdateByRentalTrackingID.UpdateNotesColumn]));
                 }
                 set {
-                    this[this.tableFindRentalTransactionsDateClose.VendorNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime PickupDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tableFindRentalTransactionsDateClose.PickupDateColumn]));
-                }
-                set {
-                    this[this.tableFindRentalTransactionsDateClose.PickupDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int NoOfDaysRequested {
-                get {
-                    return ((int)(this[this.tableFindRentalTransactionsDateClose.NoOfDaysRequestedColumn]));
-                }
-                set {
-                    this[this.tableFindRentalTransactionsDateClose.NoOfDaysRequestedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal ProjectedCost {
-                get {
-                    return ((decimal)(this[this.tableFindRentalTransactionsDateClose.ProjectedCostColumn]));
-                }
-                set {
-                    this[this.tableFindRentalTransactionsDateClose.ProjectedCostColumn] = value;
+                    this[this.tableFindRentalTrackingUpdateByRentalTrackingID.UpdateNotesColumn] = value;
                 }
             }
         }
@@ -816,22 +658,22 @@ namespace RentalTrackingDLL {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class FindRentalTransactionsDateCloseRowChangeEvent : global::System.EventArgs {
+        public class FindRentalTrackingUpdateByRentalTrackingIDRowChangeEvent : global::System.EventArgs {
             
-            private FindRentalTransactionsDateCloseRow eventRow;
+            private FindRentalTrackingUpdateByRentalTrackingIDRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindRentalTransactionsDateCloseRowChangeEvent(FindRentalTransactionsDateCloseRow row, global::System.Data.DataRowAction action) {
+            public FindRentalTrackingUpdateByRentalTrackingIDRowChangeEvent(FindRentalTrackingUpdateByRentalTrackingIDRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindRentalTransactionsDateCloseRow Row {
+            public FindRentalTrackingUpdateByRentalTrackingIDRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -847,7 +689,7 @@ namespace RentalTrackingDLL {
         }
     }
 }
-namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters {
+namespace RentalTrackingDLL.FindRentalTrackingUpdateByRentalTrackingIDDataSetTableAdapters {
     
     
     /// <summary>
@@ -859,7 +701,7 @@ namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters 
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class FindRentalTransactionsDateCloseTableAdapter : global::System.ComponentModel.Component {
+    public partial class FindRentalTrackingUpdateByRentalTrackingIDTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -873,7 +715,7 @@ namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters 
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public FindRentalTransactionsDateCloseTableAdapter() {
+        public FindRentalTrackingUpdateByRentalTrackingIDTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -970,18 +812,12 @@ namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters 
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "FindRentalTransactionsDateClose";
-            tableMapping.ColumnMappings.Add("RequestingDate", "RequestingDate");
-            tableMapping.ColumnMappings.Add("PONumber", "PONumber");
-            tableMapping.ColumnMappings.Add("AssignedProjectID", "AssignedProjectID");
-            tableMapping.ColumnMappings.Add("ProjectName", "ProjectName");
+            tableMapping.DataSetTable = "FindRentalTrackingUpdateByRentalTrackingID";
+            tableMapping.ColumnMappings.Add("TransactionDate", "TransactionDate");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("HomeOffice", "HomeOffice");
-            tableMapping.ColumnMappings.Add("VendorName", "VendorName");
-            tableMapping.ColumnMappings.Add("PickupDate", "PickupDate");
-            tableMapping.ColumnMappings.Add("NoOfDaysRequested", "NoOfDaysRequested");
-            tableMapping.ColumnMappings.Add("ProjectedCost", "ProjectedCost");
+            tableMapping.ColumnMappings.Add("UpdateNotes", "UpdateNotes");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -998,20 +834,20 @@ namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.FindRentalTransactionsDateClose";
+            this._commandCollection[0].CommandText = "dbo.FindRentalTrackingUpdateByRentalTrackingID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LimitingDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RentalTrackingID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FindRentalTransactionsCloseDateDataSet.FindRentalTransactionsDateCloseDataTable dataTable, global::System.Nullable<global::System.DateTime> LimitingDate) {
+        public virtual int Fill(FindRentalTrackingUpdateByRentalTrackingIDDataSet.FindRentalTrackingUpdateByRentalTrackingIDDataTable dataTable, global::System.Nullable<int> RentalTrackingID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((LimitingDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(LimitingDate.Value));
+            if ((RentalTrackingID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(RentalTrackingID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -1027,15 +863,15 @@ namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FindRentalTransactionsCloseDateDataSet.FindRentalTransactionsDateCloseDataTable GetData(global::System.Nullable<global::System.DateTime> LimitingDate) {
+        public virtual FindRentalTrackingUpdateByRentalTrackingIDDataSet.FindRentalTrackingUpdateByRentalTrackingIDDataTable GetData(global::System.Nullable<int> RentalTrackingID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((LimitingDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(LimitingDate.Value));
+            if ((RentalTrackingID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(RentalTrackingID.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            FindRentalTransactionsCloseDateDataSet.FindRentalTransactionsDateCloseDataTable dataTable = new FindRentalTransactionsCloseDateDataSet.FindRentalTransactionsDateCloseDataTable();
+            FindRentalTrackingUpdateByRentalTrackingIDDataSet.FindRentalTrackingUpdateByRentalTrackingIDDataTable dataTable = new FindRentalTrackingUpdateByRentalTrackingIDDataSet.FindRentalTrackingUpdateByRentalTrackingIDDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1109,7 +945,7 @@ namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(FindRentalTransactionsCloseDateDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(FindRentalTrackingUpdateByRentalTrackingIDDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1119,7 +955,7 @@ namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(FindRentalTransactionsCloseDateDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(FindRentalTrackingUpdateByRentalTrackingIDDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1129,7 +965,7 @@ namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(FindRentalTransactionsCloseDateDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(FindRentalTrackingUpdateByRentalTrackingIDDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1163,7 +999,7 @@ namespace RentalTrackingDLL.FindRentalTransactionsCloseDateDataSetTableAdapters 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(FindRentalTransactionsCloseDateDataSet dataSet) {
+        public virtual int UpdateAll(FindRentalTrackingUpdateByRentalTrackingIDDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

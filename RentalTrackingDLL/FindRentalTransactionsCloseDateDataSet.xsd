@@ -22,16 +22,17 @@
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="RequestingDate" DataSetColumn="RequestingDate" />
               <Mapping SourceColumn="PONumber" DataSetColumn="PONumber" />
-              <Mapping SourceColumn="RequestDate" DataSetColumn="RequestDate" />
-              <Mapping SourceColumn="JobNumber" DataSetColumn="JobNumber" />
+              <Mapping SourceColumn="AssignedProjectID" DataSetColumn="AssignedProjectID" />
+              <Mapping SourceColumn="ProjectName" DataSetColumn="ProjectName" />
               <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
               <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
               <Mapping SourceColumn="HomeOffice" DataSetColumn="HomeOffice" />
-              <Mapping SourceColumn="RequestingDate" DataSetColumn="RequestingDate" />
               <Mapping SourceColumn="VendorName" DataSetColumn="VendorName" />
               <Mapping SourceColumn="PickupDate" DataSetColumn="PickupDate" />
               <Mapping SourceColumn="NoOfDaysRequested" DataSetColumn="NoOfDaysRequested" />
+              <Mapping SourceColumn="ProjectedCost" DataSetColumn="ProjectedCost" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -46,9 +47,16 @@
         <xs:element name="FindRentalTransactionsDateClose" msprop:Generator_TableClassName="FindRentalTransactionsDateCloseDataTable" msprop:Generator_TableVarName="tableFindRentalTransactionsDateClose" msprop:Generator_TablePropName="FindRentalTransactionsDateClose" msprop:Generator_RowDeletingName="FindRentalTransactionsDateCloseRowDeleting" msprop:Generator_RowChangingName="FindRentalTransactionsDateCloseRowChanging" msprop:Generator_RowEvHandlerName="FindRentalTransactionsDateCloseRowChangeEventHandler" msprop:Generator_RowDeletedName="FindRentalTransactionsDateCloseRowDeleted" msprop:Generator_UserTableName="FindRentalTransactionsDateClose" msprop:Generator_RowChangedName="FindRentalTransactionsDateCloseRowChanged" msprop:Generator_RowEvArgName="FindRentalTransactionsDateCloseRowChangeEvent" msprop:Generator_RowClassName="FindRentalTransactionsDateCloseRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="PONumber" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnPONumber" msprop:Generator_ColumnPropNameInRow="PONumber" msprop:Generator_ColumnPropNameInTable="PONumberColumn" msprop:Generator_UserColumnName="PONumber" type="xs:int" />
-              <xs:element name="RequestDate" msprop:Generator_ColumnVarNameInTable="columnRequestDate" msprop:Generator_ColumnPropNameInRow="RequestDate" msprop:Generator_ColumnPropNameInTable="RequestDateColumn" msprop:Generator_UserColumnName="RequestDate" type="xs:dateTime" />
-              <xs:element name="JobNumber" msprop:Generator_ColumnVarNameInTable="columnJobNumber" msprop:Generator_ColumnPropNameInRow="JobNumber" msprop:Generator_ColumnPropNameInTable="JobNumberColumn" msprop:Generator_UserColumnName="JobNumber">
+              <xs:element name="RequestingDate" msprop:Generator_ColumnVarNameInTable="columnRequestingDate" msprop:Generator_ColumnPropNameInRow="RequestingDate" msprop:Generator_ColumnPropNameInTable="RequestingDateColumn" msprop:Generator_UserColumnName="RequestingDate" type="xs:dateTime" />
+              <xs:element name="PONumber" msprop:Generator_ColumnVarNameInTable="columnPONumber" msprop:Generator_ColumnPropNameInRow="PONumber" msprop:Generator_ColumnPropNameInTable="PONumberColumn" msprop:Generator_UserColumnName="PONumber" type="xs:int" />
+              <xs:element name="AssignedProjectID" msprop:Generator_ColumnVarNameInTable="columnAssignedProjectID" msprop:Generator_ColumnPropNameInRow="AssignedProjectID" msprop:Generator_ColumnPropNameInTable="AssignedProjectIDColumn" msprop:Generator_UserColumnName="AssignedProjectID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn" msprop:Generator_UserColumnName="ProjectName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
@@ -76,7 +84,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RequestingDate" msprop:Generator_ColumnVarNameInTable="columnRequestingDate" msprop:Generator_ColumnPropNameInRow="RequestingDate" msprop:Generator_ColumnPropNameInTable="RequestingDateColumn" msprop:Generator_UserColumnName="RequestingDate" type="xs:dateTime" />
               <xs:element name="VendorName" msprop:Generator_ColumnVarNameInTable="columnVendorName" msprop:Generator_ColumnPropNameInRow="VendorName" msprop:Generator_ColumnPropNameInTable="VendorNameColumn" msprop:Generator_UserColumnName="VendorName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -86,14 +93,11 @@
               </xs:element>
               <xs:element name="PickupDate" msprop:Generator_ColumnVarNameInTable="columnPickupDate" msprop:Generator_ColumnPropNameInRow="PickupDate" msprop:Generator_ColumnPropNameInTable="PickupDateColumn" msprop:Generator_UserColumnName="PickupDate" type="xs:dateTime" />
               <xs:element name="NoOfDaysRequested" msprop:Generator_ColumnVarNameInTable="columnNoOfDaysRequested" msprop:Generator_ColumnPropNameInRow="NoOfDaysRequested" msprop:Generator_ColumnPropNameInTable="NoOfDaysRequestedColumn" msprop:Generator_UserColumnName="NoOfDaysRequested" type="xs:int" />
+              <xs:element name="ProjectedCost" msprop:Generator_ColumnVarNameInTable="columnProjectedCost" msprop:Generator_ColumnPropNameInRow="ProjectedCost" msprop:Generator_ColumnPropNameInTable="ProjectedCostColumn" msprop:Generator_UserColumnName="ProjectedCost" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:FindRentalTransactionsDateClose" />
-      <xs:field xpath="mstns:PONumber" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

@@ -295,6 +295,8 @@ namespace RentalTrackingDLL {
             
             private global::System.Data.DataColumn columnReturnedDate;
             
+            private global::System.Data.DataColumn columnProjectedCost;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public FindRentalTransasctionByProjectIDDataTable() {
@@ -394,6 +396,14 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ProjectedCostColumn {
+                get {
+                    return this.columnProjectedCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +439,7 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindRentalTransasctionByProjectIDRow AddFindRentalTransasctionByProjectIDRow(int PONumber, System.DateTime RequestingDate, string FirstName, string LastName, string VendorName, System.DateTime RequestingDate1, System.DateTime ExpirationDate, System.DateTime ReturnedDate) {
+            public FindRentalTransasctionByProjectIDRow AddFindRentalTransasctionByProjectIDRow(int PONumber, System.DateTime RequestingDate, string FirstName, string LastName, string VendorName, System.DateTime RequestingDate1, System.DateTime ExpirationDate, System.DateTime ReturnedDate, decimal ProjectedCost) {
                 FindRentalTransasctionByProjectIDRow rowFindRentalTransasctionByProjectIDRow = ((FindRentalTransasctionByProjectIDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PONumber,
@@ -439,7 +449,8 @@ namespace RentalTrackingDLL {
                         VendorName,
                         RequestingDate1,
                         ExpirationDate,
-                        ReturnedDate};
+                        ReturnedDate,
+                        ProjectedCost};
                 rowFindRentalTransasctionByProjectIDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFindRentalTransasctionByProjectIDRow);
                 return rowFindRentalTransasctionByProjectIDRow;
@@ -470,6 +481,7 @@ namespace RentalTrackingDLL {
                 this.columnRequestingDate1 = base.Columns["RequestingDate1"];
                 this.columnExpirationDate = base.Columns["ExpirationDate"];
                 this.columnReturnedDate = base.Columns["ReturnedDate"];
+                this.columnProjectedCost = base.Columns["ProjectedCost"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,6 +503,8 @@ namespace RentalTrackingDLL {
                 base.Columns.Add(this.columnExpirationDate);
                 this.columnReturnedDate = new global::System.Data.DataColumn("ReturnedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReturnedDate);
+                this.columnProjectedCost = new global::System.Data.DataColumn("ProjectedCost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProjectedCost);
                 this.columnPONumber.AllowDBNull = false;
                 this.columnRequestingDate.AllowDBNull = false;
                 this.columnFirstName.AllowDBNull = false;
@@ -501,6 +515,7 @@ namespace RentalTrackingDLL {
                 this.columnVendorName.MaxLength = 2147483647;
                 this.columnRequestingDate1.AllowDBNull = false;
                 this.columnExpirationDate.AllowDBNull = false;
+                this.columnProjectedCost.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,6 +752,17 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ProjectedCost {
+                get {
+                    return ((decimal)(this[this.tableFindRentalTransasctionByProjectID.ProjectedCostColumn]));
+                }
+                set {
+                    this[this.tableFindRentalTransasctionByProjectID.ProjectedCostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsReturnedDateNull() {
                 return this.IsNull(this.tableFindRentalTransasctionByProjectID.ReturnedDateColumn);
             }
@@ -915,6 +941,7 @@ namespace RentalTrackingDLL.FindRentalTransactionByProjectIDDataSetTableAdapters
             tableMapping.ColumnMappings.Add("RequestingDate1", "RequestingDate1");
             tableMapping.ColumnMappings.Add("ExpirationDate", "ExpirationDate");
             tableMapping.ColumnMappings.Add("ReturnedDate", "ReturnedDate");
+            tableMapping.ColumnMappings.Add("ProjectedCost", "ProjectedCost");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

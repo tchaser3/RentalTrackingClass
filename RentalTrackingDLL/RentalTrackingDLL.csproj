@@ -54,6 +54,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindRentalTrackingTransactionsByPONumberDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FindRentalTrackingUpdateByRentalTrackingIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindRentalTrackingUpdateByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FindRentalTransactionByProjectIDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +74,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InsertRentalTrackingTransactionEntry.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InsertRentalTrackingUpdateEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InsertRentalTrackingUpdateEntry.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -80,6 +90,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RentalTrackingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RentalTrackingUpdatesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentalTrackingUpdatesDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +120,17 @@
     </None>
     <None Include="FindRentalTrackingTransactionsByPONumberDataSet.xss">
       <DependentUpon>FindRentalTrackingTransactionsByPONumberDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingUpdateByRentalTrackingIDDataSet.xsc">
+      <DependentUpon>FindRentalTrackingUpdateByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingUpdateByRentalTrackingIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindRentalTrackingUpdateByRentalTrackingIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindRentalTrackingUpdateByRentalTrackingIDDataSet.xss">
+      <DependentUpon>FindRentalTrackingUpdateByRentalTrackingIDDataSet.xsd</DependentUpon>
     </None>
     <None Include="FindRentalTransactionByProjectIDDataSet.xsc">
       <DependentUpon>FindRentalTransactionByProjectIDDataSet.xsd</DependentUpon>
@@ -139,6 +165,17 @@
     <None Include="InsertRentalTrackingTransactionEntry.xss">
       <DependentUpon>InsertRentalTrackingTransactionEntry.xsd</DependentUpon>
     </None>
+    <None Include="InsertRentalTrackingUpdateEntry.xsc">
+      <DependentUpon>InsertRentalTrackingUpdateEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertRentalTrackingUpdateEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InsertRentalTrackingUpdateEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InsertRentalTrackingUpdateEntry.xss">
+      <DependentUpon>InsertRentalTrackingUpdateEntry.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,6 +190,17 @@
     </None>
     <None Include="RentalTrackingDataSet.xss">
       <DependentUpon>RentalTrackingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentalTrackingUpdatesDataSet.xsc">
+      <DependentUpon>RentalTrackingUpdatesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentalTrackingUpdatesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RentalTrackingUpdatesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RentalTrackingUpdatesDataSet.xss">
+      <DependentUpon>RentalTrackingUpdatesDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

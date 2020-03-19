@@ -23,6 +23,8 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="RequestingDate" DataSetColumn="RequestingDate" />
+              <Mapping SourceColumn="AssignedProjectID" DataSetColumn="AssignedProjectID" />
+              <Mapping SourceColumn="ProjectName" DataSetColumn="ProjectName" />
               <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
               <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
               <Mapping SourceColumn="VendorName" DataSetColumn="VendorName" />
@@ -30,6 +32,7 @@
               <Mapping SourceColumn="ReturnedDate" DataSetColumn="ReturnedDate" />
               <Mapping SourceColumn="NoOfDaysRequested" DataSetColumn="NoOfDaysRequested" />
               <Mapping SourceColumn="TotalNoOfDays" DataSetColumn="TotalNoOfDays" />
+              <Mapping SourceColumn="ProjectedCost" DataSetColumn="ProjectedCost" />
               <Mapping SourceColumn="TotalCost" DataSetColumn="TotalCost" />
             </Mappings>
             <Sources />
@@ -46,6 +49,20 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RequestingDate" msprop:Generator_ColumnVarNameInTable="columnRequestingDate" msprop:Generator_ColumnPropNameInRow="RequestingDate" msprop:Generator_ColumnPropNameInTable="RequestingDateColumn" msprop:Generator_UserColumnName="RequestingDate" type="xs:dateTime" />
+              <xs:element name="AssignedProjectID" msprop:Generator_ColumnVarNameInTable="columnAssignedProjectID" msprop:Generator_ColumnPropNameInRow="AssignedProjectID" msprop:Generator_ColumnPropNameInTable="AssignedProjectIDColumn" msprop:Generator_UserColumnName="AssignedProjectID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn" msprop:Generator_UserColumnName="ProjectName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -71,6 +88,7 @@
               <xs:element name="ReturnedDate" msprop:Generator_ColumnVarNameInTable="columnReturnedDate" msprop:Generator_ColumnPropNameInRow="ReturnedDate" msprop:Generator_ColumnPropNameInTable="ReturnedDateColumn" msprop:Generator_UserColumnName="ReturnedDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NoOfDaysRequested" msprop:Generator_ColumnVarNameInTable="columnNoOfDaysRequested" msprop:Generator_ColumnPropNameInRow="NoOfDaysRequested" msprop:Generator_ColumnPropNameInTable="NoOfDaysRequestedColumn" msprop:Generator_UserColumnName="NoOfDaysRequested" type="xs:int" />
               <xs:element name="TotalNoOfDays" msprop:Generator_ColumnVarNameInTable="columnTotalNoOfDays" msprop:Generator_ColumnPropNameInRow="TotalNoOfDays" msprop:Generator_ColumnPropNameInTable="TotalNoOfDaysColumn" msprop:Generator_UserColumnName="TotalNoOfDays" type="xs:int" />
+              <xs:element name="ProjectedCost" msprop:Generator_ColumnVarNameInTable="columnProjectedCost" msprop:Generator_ColumnPropNameInRow="ProjectedCost" msprop:Generator_ColumnPropNameInTable="ProjectedCostColumn" msprop:Generator_UserColumnName="ProjectedCost" type="xs:decimal" />
               <xs:element name="TotalCost" msprop:Generator_ColumnVarNameInTable="columnTotalCost" msprop:Generator_ColumnPropNameInRow="TotalCost" msprop:Generator_ColumnPropNameInTable="TotalCostColumn" msprop:Generator_UserColumnName="TotalCost" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
