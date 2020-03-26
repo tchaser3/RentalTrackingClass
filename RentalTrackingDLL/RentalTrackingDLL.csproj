@@ -49,6 +49,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CloseRentalTrackingTransactionEntry.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FindRentalTrackingAgreementByRentalTrackingIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindRentalTrackingAgreementByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FindRentalTrackingDocumentationByRentalTrackingIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindRentalTrackingDocumentationByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FindRentalTrackingItemByAssignedProjectIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindRentalTrackingItemByAssignedProjectIDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FindRentalTrackingItemsByRentalTrackingIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindRentalTrackingItemsByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FindRentalTrackingTransactionsByPONumberDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +89,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindRentalTransactionsCloseDateDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InsertIntoRentalTrackingItemsEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InsertIntoRentalTrackingItemsEntry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InsertRentalTrackingAgreementEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InsertRentalTrackingAgreementEntry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InsertRentalTrackingDocumentationEntry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InsertRentalTrackingDocumentationEntry.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InsertRentalTrackingTransactionEntry.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,12 +119,27 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="RentalTrackingAgreementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentalTrackingAgreementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RentalTrackingClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalTrackingDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RentalTrackingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RentalTrackingDocumentationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentalTrackingDocumentationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RentalTrackingItemsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentalTrackingItemsDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="RentalTrackingUpdatesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +159,50 @@
     </None>
     <None Include="CloseRentalTrackingTransactionEntry.xss">
       <DependentUpon>CloseRentalTrackingTransactionEntry.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingAgreementByRentalTrackingIDDataSet.xsc">
+      <DependentUpon>FindRentalTrackingAgreementByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingAgreementByRentalTrackingIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindRentalTrackingAgreementByRentalTrackingIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindRentalTrackingAgreementByRentalTrackingIDDataSet.xss">
+      <DependentUpon>FindRentalTrackingAgreementByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingDocumentationByRentalTrackingIDDataSet.xsc">
+      <DependentUpon>FindRentalTrackingDocumentationByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingDocumentationByRentalTrackingIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindRentalTrackingDocumentationByRentalTrackingIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindRentalTrackingDocumentationByRentalTrackingIDDataSet.xss">
+      <DependentUpon>FindRentalTrackingDocumentationByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingItemByAssignedProjectIDDataSet.xsc">
+      <DependentUpon>FindRentalTrackingItemByAssignedProjectIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingItemByAssignedProjectIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindRentalTrackingItemByAssignedProjectIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindRentalTrackingItemByAssignedProjectIDDataSet.xss">
+      <DependentUpon>FindRentalTrackingItemByAssignedProjectIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingItemsByRentalTrackingIDDataSet.xsc">
+      <DependentUpon>FindRentalTrackingItemsByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingItemsByRentalTrackingIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindRentalTrackingItemsByRentalTrackingIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindRentalTrackingItemsByRentalTrackingIDDataSet.xss">
+      <DependentUpon>FindRentalTrackingItemsByRentalTrackingIDDataSet.xsd</DependentUpon>
     </None>
     <None Include="FindRentalTrackingTransactionsByPONumberDataSet.xsc">
       <DependentUpon>FindRentalTrackingTransactionsByPONumberDataSet.xsd</DependentUpon>
@@ -154,6 +248,39 @@
     <None Include="FindRentalTransactionsCloseDateDataSet.xss">
       <DependentUpon>FindRentalTransactionsCloseDateDataSet.xsd</DependentUpon>
     </None>
+    <None Include="InsertIntoRentalTrackingItemsEntry.xsc">
+      <DependentUpon>InsertIntoRentalTrackingItemsEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertIntoRentalTrackingItemsEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InsertIntoRentalTrackingItemsEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InsertIntoRentalTrackingItemsEntry.xss">
+      <DependentUpon>InsertIntoRentalTrackingItemsEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertRentalTrackingAgreementEntry.xsc">
+      <DependentUpon>InsertRentalTrackingAgreementEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertRentalTrackingAgreementEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InsertRentalTrackingAgreementEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InsertRentalTrackingAgreementEntry.xss">
+      <DependentUpon>InsertRentalTrackingAgreementEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertRentalTrackingDocumentationEntry.xsc">
+      <DependentUpon>InsertRentalTrackingDocumentationEntry.xsd</DependentUpon>
+    </None>
+    <None Include="InsertRentalTrackingDocumentationEntry.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InsertRentalTrackingDocumentationEntry.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InsertRentalTrackingDocumentationEntry.xss">
+      <DependentUpon>InsertRentalTrackingDocumentationEntry.xsd</DependentUpon>
+    </None>
     <None Include="InsertRentalTrackingTransactionEntry.xsc">
       <DependentUpon>InsertRentalTrackingTransactionEntry.xsd</DependentUpon>
     </None>
@@ -180,6 +307,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="RentalTrackingAgreementDataSet.xsc">
+      <DependentUpon>RentalTrackingAgreementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentalTrackingAgreementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RentalTrackingAgreementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RentalTrackingAgreementDataSet.xss">
+      <DependentUpon>RentalTrackingAgreementDataSet.xsd</DependentUpon>
+    </None>
     <None Include="RentalTrackingDataSet.xsc">
       <DependentUpon>RentalTrackingDataSet.xsd</DependentUpon>
     </None>
@@ -190,6 +328,28 @@
     </None>
     <None Include="RentalTrackingDataSet.xss">
       <DependentUpon>RentalTrackingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentalTrackingDocumentationDataSet.xsc">
+      <DependentUpon>RentalTrackingDocumentationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentalTrackingDocumentationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RentalTrackingDocumentationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RentalTrackingDocumentationDataSet.xss">
+      <DependentUpon>RentalTrackingDocumentationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentalTrackingItemsDataSet1.xsc">
+      <DependentUpon>RentalTrackingItemsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RentalTrackingItemsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RentalTrackingItemsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RentalTrackingItemsDataSet1.xss">
+      <DependentUpon>RentalTrackingItemsDataSet1.xsd</DependentUpon>
     </None>
     <None Include="RentalTrackingUpdatesDataSet.xsc">
       <DependentUpon>RentalTrackingUpdatesDataSet.xsd</DependentUpon>

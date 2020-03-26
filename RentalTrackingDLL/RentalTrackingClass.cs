@@ -42,6 +42,228 @@ namespace RentalTrackingDLL
         FindRentalTrackingUpdateByRentalTrackingIDDataSet aFindRentalTrackingUpdateByRentalTrackingIDDataSet;
         FindRentalTrackingUpdateByRentalTrackingIDDataSetTableAdapters.FindRentalTrackingUpdateByRentalTrackingIDTableAdapter aFindRentalTrackingUpdateByRentalTrackingIDTableAdapter;
 
+        InsertIntoRentalTrackingItemsEntryTableAdapters.QueriesTableAdapter aInsertIntoRentalTrackingItemsTableAdapter;
+
+        FindRentalTrackingItemsByRentalTrackingIDDataSet aFindRentalTrackingItemsByRentalTrackingIDDataSet;
+        FindRentalTrackingItemsByRentalTrackingIDDataSetTableAdapters.FindRentalTrackingItemsByRentalTrackingIDTableAdapter aFindRentalTrackingItemsByRentalTrackingIDTableAdapter;
+
+        FindRentalTrackingItemByAssignedProjectIDDataSet aFindRentalTrackingItemByAssignedProjectIDDataSet;
+        FindRentalTrackingItemByAssignedProjectIDDataSetTableAdapters.FindRentalTrackingItemByAssignedProjectIDTableAdapter aFindRentalTrackingItemByAssignedProjectIDTableAdapter;
+
+        RentalTrackingItemsDataSet aRentalTrackingItemsDataSet;
+        RentalTrackingItemsDataSetTableAdapters.rentaltackingitemsTableAdapter aRentalTrackingItemsTableAdapter;
+
+        RentalTrackingAgreementDataSet aRentalTrackingAgreementDataSet;
+        RentalTrackingAgreementDataSetTableAdapters.rentaltrackingagreementTableAdapter aRentalTrackingAgreementTableAdapter;
+
+        InsertRentalTrackingAgreementEntryTableAdapters.QueriesTableAdapter aInsertRentalTrackingAgreementTableAdapter;
+
+        FindRentalTrackingAgreementByRentalTrackingIDDataSet aFindRentalTrackingAgreementByRentalTrackingIDDataSet;
+        FindRentalTrackingAgreementByRentalTrackingIDDataSetTableAdapters.FindRentalTrackingAggreementByRentalTrackingIDTableAdapter aFindRentalTrackingAgreementByRentalTrackingIDTableAdapter;
+
+        RentalTrackingDocumentationDataSet aRentalTrackingDocumentationDataSet;
+        RentalTrackingDocumentationDataSetTableAdapters.rentaltrackingdocumentationTableAdapter aRentalTrackingDocumentationTableAdapter;
+
+        InsertRentalTrackingDocumentationEntryTableAdapters.QueriesTableAdapter aInsertRentalTrackingDocumentationTableAdapter;
+
+        FindRentalTrackingDocumentationByRentalTrackingIDDataSet aFindRentalTrackingDocumentationByRentalTrackingIDDataSet;
+        FindRentalTrackingDocumentationByRentalTrackingIDDataSetTableAdapters.FindRentalTrackingDocumentationByRentalTackingIDTableAdapter aFindRentalTrackingDocumentationByRentalTrackingIDTableAdapter;
+
+        public FindRentalTrackingDocumentationByRentalTrackingIDDataSet FindRentalTrackingDocumentationByRentalTrackingID(int intRentalTrackingID)
+        {
+            try
+            {
+                aFindRentalTrackingDocumentationByRentalTrackingIDDataSet = new FindRentalTrackingDocumentationByRentalTrackingIDDataSet();
+                aFindRentalTrackingDocumentationByRentalTrackingIDTableAdapter = new FindRentalTrackingDocumentationByRentalTrackingIDDataSetTableAdapters.FindRentalTrackingDocumentationByRentalTackingIDTableAdapter();
+                aFindRentalTrackingDocumentationByRentalTrackingIDTableAdapter.Fill(aFindRentalTrackingDocumentationByRentalTrackingIDDataSet.FindRentalTrackingDocumentationByRentalTackingID, intRentalTrackingID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Rental Tracking Documentation By Rental Tracking ID " + Ex.Message);
+            }
+
+            return aFindRentalTrackingDocumentationByRentalTrackingIDDataSet;
+        }
+        public bool InsertRentalTrackingDocumentation(int intRentalTrackingID, int intEmployeeID, string strDocumentType, string strDocumentPath)
+        {
+            bool blnFatalError = false;
+
+            try
+            {
+                aInsertRentalTrackingDocumentationTableAdapter = new InsertRentalTrackingDocumentationEntryTableAdapters.QueriesTableAdapter();
+                aInsertRentalTrackingDocumentationTableAdapter.InsertRentalTrackingDocumentation(intRentalTrackingID, intEmployeeID, strDocumentType, strDocumentPath);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Insert Rental Tracking Documentation " + Ex.Message);
+
+                blnFatalError = true;
+            }
+
+            return blnFatalError;
+        }
+        public RentalTrackingDocumentationDataSet GetRentalTrackingDocumentationInfo()
+        {
+            try
+            {
+                aRentalTrackingDocumentationDataSet = new RentalTrackingDocumentationDataSet();
+                aRentalTrackingDocumentationTableAdapter = new RentalTrackingDocumentationDataSetTableAdapters.rentaltrackingdocumentationTableAdapter();
+                aRentalTrackingDocumentationTableAdapter.Fill(aRentalTrackingDocumentationDataSet.rentaltrackingdocumentation);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Get Rental Tracking Documentation Info " + Ex.Message);
+            }
+
+            return aRentalTrackingDocumentationDataSet;
+        }
+        public void UpdateRentalTrackingDocumentationDB(RentalTrackingDocumentationDataSet aRentalTrackingDocumentationDataSet)
+        {
+            try
+            {
+                aRentalTrackingDocumentationTableAdapter = new RentalTrackingDocumentationDataSetTableAdapters.rentaltrackingdocumentationTableAdapter();
+                aRentalTrackingDocumentationTableAdapter.Update(aRentalTrackingDocumentationDataSet.rentaltrackingdocumentation);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Update Rental Tracking Documentation DB " + Ex.Message);
+            }
+        }
+        public FindRentalTrackingAgreementByRentalTrackingIDDataSet FindRentalTrackingAgreementByRentalTrackingID(int intRentalTrackingID)
+        {
+            try
+            {
+                aFindRentalTrackingAgreementByRentalTrackingIDDataSet = new FindRentalTrackingAgreementByRentalTrackingIDDataSet();
+                aFindRentalTrackingAgreementByRentalTrackingIDTableAdapter = new FindRentalTrackingAgreementByRentalTrackingIDDataSetTableAdapters.FindRentalTrackingAggreementByRentalTrackingIDTableAdapter();
+                aFindRentalTrackingAgreementByRentalTrackingIDTableAdapter.Fill(aFindRentalTrackingAgreementByRentalTrackingIDDataSet.FindRentalTrackingAggreementByRentalTrackingID, intRentalTrackingID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Rental Tracking Agreement By Rental Tracking ID " + Ex.Message);
+            }
+
+            return aFindRentalTrackingAgreementByRentalTrackingIDDataSet;
+        }
+        public bool InsertRentalTrackingAgreement(int intRentalTrackingID, int intEmployeeID, string strAgreementNumber, string strAgreementPath, string strAgreementNotes)
+        {
+            bool blnFatalError = false;
+
+            try
+            {
+                aInsertRentalTrackingAgreementTableAdapter = new InsertRentalTrackingAgreementEntryTableAdapters.QueriesTableAdapter();
+                aInsertRentalTrackingAgreementTableAdapter.InsertRentalTrackingAgreement(intRentalTrackingID, intEmployeeID, strAgreementNumber, strAgreementPath, strAgreementNotes);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Insert Rental Tracking Agreement " + Ex.Message);
+
+                blnFatalError = true;
+            }
+
+            return blnFatalError;
+        }
+        public RentalTrackingAgreementDataSet GetRentalTrackingAgreementInfo()
+        {
+            try
+            {
+                aRentalTrackingAgreementDataSet = new RentalTrackingAgreementDataSet();
+                aRentalTrackingAgreementTableAdapter = new RentalTrackingAgreementDataSetTableAdapters.rentaltrackingagreementTableAdapter();
+                aRentalTrackingAgreementTableAdapter.Fill(aRentalTrackingAgreementDataSet.rentaltrackingagreement);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Get Rental Tracking Agreement Info " + Ex.Message);
+            }
+
+            return aRentalTrackingAgreementDataSet;
+        }
+        public void UpdateRentalTrackingAgreementDB(RentalTrackingAgreementDataSet aRentalTrackingAgreementDataSet)
+        {
+            try
+            {
+                aRentalTrackingAgreementTableAdapter = new RentalTrackingAgreementDataSetTableAdapters.rentaltrackingagreementTableAdapter();
+                aRentalTrackingAgreementTableAdapter.Update(aRentalTrackingAgreementDataSet.rentaltrackingagreement);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Get Rental Tracking Agreement Info " + Ex.Message);
+            }
+        }
+        public  RentalTrackingItemsDataSet GetRentalTrackingItemsInfo()
+        {
+            try
+            {
+                aRentalTrackingItemsDataSet = new RentalTrackingItemsDataSet();
+                aRentalTrackingItemsTableAdapter = new RentalTrackingItemsDataSetTableAdapters.rentaltackingitemsTableAdapter();
+                aRentalTrackingItemsTableAdapter.Fill(aRentalTrackingItemsDataSet.rentaltackingitems);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Get Rental Tracking Items Info " + Ex.Message);
+            }
+
+            return aRentalTrackingItemsDataSet;
+        }
+        public void UpdateRentalTrackingItemsDB(RentalTrackingItemsDataSet aRentalTrackingItemsDataSet)
+        {
+            try
+            {
+                aRentalTrackingItemsTableAdapter = new RentalTrackingItemsDataSetTableAdapters.rentaltackingitemsTableAdapter();
+                aRentalTrackingItemsTableAdapter.Update(aRentalTrackingItemsDataSet.rentaltackingitems);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Update Rental Tracking Items DB " + Ex.Message);
+            }
+        }
+        public FindRentalTrackingItemByAssignedProjectIDDataSet FindRentalTrackingItemByAssignedProjectID(string strAssignedProjectID)
+        {
+            try
+            {
+                aFindRentalTrackingItemByAssignedProjectIDDataSet = new FindRentalTrackingItemByAssignedProjectIDDataSet();
+                aFindRentalTrackingItemByAssignedProjectIDTableAdapter = new FindRentalTrackingItemByAssignedProjectIDDataSetTableAdapters.FindRentalTrackingItemByAssignedProjectIDTableAdapter();
+                aFindRentalTrackingItemByAssignedProjectIDTableAdapter.Fill(aFindRentalTrackingItemByAssignedProjectIDDataSet.FindRentalTrackingItemByAssignedProjectID, strAssignedProjectID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Rental Tracking Item By Assigned Project ID " + Ex.Message);
+            }
+
+            return aFindRentalTrackingItemByAssignedProjectIDDataSet;
+        }
+        public FindRentalTrackingItemsByRentalTrackingIDDataSet FindRentalTrackingItemsByRentalTrackingID(int intRentalTrackingID)
+        {
+            try
+            {
+                aFindRentalTrackingItemsByRentalTrackingIDDataSet = new FindRentalTrackingItemsByRentalTrackingIDDataSet();
+                aFindRentalTrackingItemsByRentalTrackingIDTableAdapter = new FindRentalTrackingItemsByRentalTrackingIDDataSetTableAdapters.FindRentalTrackingItemsByRentalTrackingIDTableAdapter();
+                aFindRentalTrackingItemsByRentalTrackingIDTableAdapter.Fill(aFindRentalTrackingItemsByRentalTrackingIDDataSet.FindRentalTrackingItemsByRentalTrackingID, intRentalTrackingID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class \\ Find Rental Tracking Items By Rental Tracking ID " + Ex.Message);
+            }
+
+            return aFindRentalTrackingItemsByRentalTrackingIDDataSet;
+        }
+        public bool InsertIntoRentalTrackingItems(int intRentalTrackingID, string strRentalPartNumber, string strRentalDescription, bool blnAccessoriesAttached, int intEmployeeID, string strItemNotes)
+        {
+            bool blnFatalError = false;
+
+            try
+            {
+                aInsertIntoRentalTrackingItemsTableAdapter = new InsertIntoRentalTrackingItemsEntryTableAdapters.QueriesTableAdapter();
+                aInsertIntoRentalTrackingItemsTableAdapter.InsertIntoRentalTrackingItems(intRentalTrackingID, strRentalPartNumber, strRentalDescription, blnAccessoriesAttached, intEmployeeID, strItemNotes);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Insert Into Rental Tracking Items " + Ex.Message);
+
+                blnFatalError = true;
+            }
+
+            return blnFatalError;
+        }
         public FindRentalTrackingUpdateByRentalTrackingIDDataSet FindRentalTrackingUpdateByRentalTrackingID(int intRentalTrackingID)
         {
             try
