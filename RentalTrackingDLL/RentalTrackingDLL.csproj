@@ -69,6 +69,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindRentalTrackingItemsByRentalTrackingIDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FindRentalTrackingTransactionByRequestingDateMatchDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindRentalTrackingTransactionByRequestingDateMatchDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FindRentalTrackingTransactionsByPONumberDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,6 +208,17 @@
     </None>
     <None Include="FindRentalTrackingItemsByRentalTrackingIDDataSet.xss">
       <DependentUpon>FindRentalTrackingItemsByRentalTrackingIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingTransactionByRequestingDateMatchDataSet.xsc">
+      <DependentUpon>FindRentalTrackingTransactionByRequestingDateMatchDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTrackingTransactionByRequestingDateMatchDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindRentalTrackingTransactionByRequestingDateMatchDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindRentalTrackingTransactionByRequestingDateMatchDataSet.xss">
+      <DependentUpon>FindRentalTrackingTransactionByRequestingDateMatchDataSet.xsd</DependentUpon>
     </None>
     <None Include="FindRentalTrackingTransactionsByPONumberDataSet.xsc">
       <DependentUpon>FindRentalTrackingTransactionsByPONumberDataSet.xsd</DependentUpon>
