@@ -299,6 +299,12 @@ namespace RentalTrackingDLL {
             
             private global::System.Data.DataColumn columnTotalCost;
             
+            private global::System.Data.DataColumn columnExpirationDate;
+            
+            private global::System.Data.DataColumn columnProjectID;
+            
+            private global::System.Data.DataColumn columnProjectedCost;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public rentaltrackingDataTable() {
@@ -414,6 +420,30 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ExpirationDateColumn {
+                get {
+                    return this.columnExpirationDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ProjectIDColumn {
+                get {
+                    return this.columnProjectID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ProjectedCostColumn {
+                get {
+                    return this.columnProjectedCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +479,7 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rentaltrackingRow AddrentaltrackingRow(System.DateTime RequestingDate, int PONumber, int EmployeeID, int VendorID, System.DateTime PickupDate, System.DateTime ReturnedDate, int NoOfDaysRequested, int TotalNoOfDays, decimal TotalCost) {
+            public rentaltrackingRow AddrentaltrackingRow(System.DateTime RequestingDate, string PONumber, int EmployeeID, int VendorID, System.DateTime PickupDate, System.DateTime ReturnedDate, int NoOfDaysRequested, int TotalNoOfDays, decimal TotalCost, System.DateTime ExpirationDate, int ProjectID, decimal ProjectedCost) {
                 rentaltrackingRow rowrentaltrackingRow = ((rentaltrackingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -461,7 +491,10 @@ namespace RentalTrackingDLL {
                         ReturnedDate,
                         NoOfDaysRequested,
                         TotalNoOfDays,
-                        TotalCost};
+                        TotalCost,
+                        ExpirationDate,
+                        ProjectID,
+                        ProjectedCost};
                 rowrentaltrackingRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrentaltrackingRow);
                 return rowrentaltrackingRow;
@@ -501,6 +534,9 @@ namespace RentalTrackingDLL {
                 this.columnNoOfDaysRequested = base.Columns["NoOfDaysRequested"];
                 this.columnTotalNoOfDays = base.Columns["TotalNoOfDays"];
                 this.columnTotalCost = base.Columns["TotalCost"];
+                this.columnExpirationDate = base.Columns["ExpirationDate"];
+                this.columnProjectID = base.Columns["ProjectID"];
+                this.columnProjectedCost = base.Columns["ProjectedCost"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -510,7 +546,7 @@ namespace RentalTrackingDLL {
                 base.Columns.Add(this.columnTransactionID);
                 this.columnRequestingDate = new global::System.Data.DataColumn("RequestingDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRequestingDate);
-                this.columnPONumber = new global::System.Data.DataColumn("PONumber", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnPONumber = new global::System.Data.DataColumn("PONumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPONumber);
                 this.columnEmployeeID = new global::System.Data.DataColumn("EmployeeID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmployeeID);
@@ -526,6 +562,12 @@ namespace RentalTrackingDLL {
                 base.Columns.Add(this.columnTotalNoOfDays);
                 this.columnTotalCost = new global::System.Data.DataColumn("TotalCost", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalCost);
+                this.columnExpirationDate = new global::System.Data.DataColumn("ExpirationDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpirationDate);
+                this.columnProjectID = new global::System.Data.DataColumn("ProjectID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProjectID);
+                this.columnProjectedCost = new global::System.Data.DataColumn("ProjectedCost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProjectedCost);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTransactionID}, true));
                 this.columnTransactionID.AutoIncrement = true;
@@ -535,13 +577,16 @@ namespace RentalTrackingDLL {
                 this.columnTransactionID.ReadOnly = true;
                 this.columnTransactionID.Unique = true;
                 this.columnRequestingDate.AllowDBNull = false;
-                this.columnPONumber.AllowDBNull = false;
+                this.columnPONumber.MaxLength = 2147483647;
                 this.columnEmployeeID.AllowDBNull = false;
                 this.columnVendorID.AllowDBNull = false;
                 this.columnPickupDate.AllowDBNull = false;
                 this.columnNoOfDaysRequested.AllowDBNull = false;
                 this.columnTotalNoOfDays.AllowDBNull = false;
                 this.columnTotalCost.AllowDBNull = false;
+                this.columnExpirationDate.AllowDBNull = false;
+                this.columnProjectID.AllowDBNull = false;
+                this.columnProjectedCost.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -706,9 +751,14 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int PONumber {
+            public string PONumber {
                 get {
-                    return ((int)(this[this.tablerentaltracking.PONumberColumn]));
+                    try {
+                        return ((string)(this[this.tablerentaltracking.PONumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PONumber\' in table \'rentaltracking\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablerentaltracking.PONumberColumn] = value;
@@ -795,6 +845,51 @@ namespace RentalTrackingDLL {
                 set {
                     this[this.tablerentaltracking.TotalCostColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime ExpirationDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tablerentaltracking.ExpirationDateColumn]));
+                }
+                set {
+                    this[this.tablerentaltracking.ExpirationDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ProjectID {
+                get {
+                    return ((int)(this[this.tablerentaltracking.ProjectIDColumn]));
+                }
+                set {
+                    this[this.tablerentaltracking.ProjectIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ProjectedCost {
+                get {
+                    return ((decimal)(this[this.tablerentaltracking.ProjectedCostColumn]));
+                }
+                set {
+                    this[this.tablerentaltracking.ProjectedCostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPONumberNull() {
+                return this.IsNull(this.tablerentaltracking.PONumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPONumberNull() {
+                this[this.tablerentaltracking.PONumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -979,14 +1074,16 @@ namespace RentalTrackingDLL.RentalTrackingDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("NoOfDaysRequested", "NoOfDaysRequested");
             tableMapping.ColumnMappings.Add("TotalNoOfDays", "TotalNoOfDays");
             tableMapping.ColumnMappings.Add("TotalCost", "TotalCost");
+            tableMapping.ColumnMappings.Add("ExpirationDate", "ExpirationDate");
+            tableMapping.ColumnMappings.Add("ProjectID", "ProjectID");
+            tableMapping.ColumnMappings.Add("ProjectedCost", "ProjectedCost");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[rentaltracking] WHERE (([TransactionID] = @Original_TransactionID) AND ([RequestingDate] = @Original_RequestingDate) AND ([PONumber] = @Original_PONumber) AND ([EmployeeID] = @Original_EmployeeID) AND ([VendorID] = @Original_VendorID) AND ([PickupDate] = @Original_PickupDate) AND ((@IsNull_ReturnedDate = 1 AND [ReturnedDate] IS NULL) OR ([ReturnedDate] = @Original_ReturnedDate)) AND ([NoOfDaysRequested] = @Original_NoOfDaysRequested) AND ([TotalNoOfDays] = @Original_TotalNoOfDays) AND ([TotalCost] = @Original_TotalCost))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[rentaltracking] WHERE (([TransactionID] = @Original_TransactionID) AND ([RequestingDate] = @Original_RequestingDate) AND ([EmployeeID] = @Original_EmployeeID) AND ([VendorID] = @Original_VendorID) AND ([PickupDate] = @Original_PickupDate) AND ((@IsNull_ReturnedDate = 1 AND [ReturnedDate] IS NULL) OR ([ReturnedDate] = @Original_ReturnedDate)) AND ([NoOfDaysRequested] = @Original_NoOfDaysRequested) AND ([TotalNoOfDays] = @Original_TotalNoOfDays) AND ([TotalCost] = @Original_TotalCost) AND ([ExpirationDate] = @Original_ExpirationDate) AND ([ProjectID] = @Original_ProjectID) AND ([ProjectedCost] = @Original_ProjectedCost))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RequestingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestingDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PONumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VendorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VendorID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PickupDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickupDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -995,13 +1092,16 @@ namespace RentalTrackingDLL.RentalTrackingDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoOfDaysRequested", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoOfDaysRequested", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalNoOfDays", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalNoOfDays", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalCost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "TotalCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpirationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProjectedCost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "ProjectedCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[rentaltracking] ([RequestingDate], [PONumber], [EmployeeID], [VendorID], [PickupDate], [ReturnedDate], [NoOfDaysRequested], [TotalNoOfDays], [TotalCost]) VALUES (@RequestingDate, @PONumber, @EmployeeID, @VendorID, @PickupDate, @ReturnedDate, @NoOfDaysRequested, @TotalNoOfDays, @TotalCost);
-SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate, ReturnedDate, NoOfDaysRequested, TotalNoOfDays, TotalCost FROM rentaltracking WHERE (TransactionID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[rentaltracking] ([RequestingDate], [PONumber], [EmployeeID], [VendorID], [PickupDate], [ReturnedDate], [NoOfDaysRequested], [TotalNoOfDays], [TotalCost], [ExpirationDate], [ProjectID], [ProjectedCost]) VALUES (@RequestingDate, @PONumber, @EmployeeID, @VendorID, @PickupDate, @ReturnedDate, @NoOfDaysRequested, @TotalNoOfDays, @TotalCost, @ExpirationDate, @ProjectID, @ProjectedCost);
+SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate, ReturnedDate, NoOfDaysRequested, TotalNoOfDays, TotalCost, ExpirationDate, ProjectID, ProjectedCost FROM rentaltracking WHERE (TransactionID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestingDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VendorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VendorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PickupDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickupDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1009,13 +1109,16 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoOfDaysRequested", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoOfDaysRequested", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalNoOfDays", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalNoOfDays", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "TotalCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpirationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjectedCost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "ProjectedCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[rentaltracking] SET [RequestingDate] = @RequestingDate, [PONumber] = @PONumber, [EmployeeID] = @EmployeeID, [VendorID] = @VendorID, [PickupDate] = @PickupDate, [ReturnedDate] = @ReturnedDate, [NoOfDaysRequested] = @NoOfDaysRequested, [TotalNoOfDays] = @TotalNoOfDays, [TotalCost] = @TotalCost WHERE (([TransactionID] = @Original_TransactionID) AND ([RequestingDate] = @Original_RequestingDate) AND ([PONumber] = @Original_PONumber) AND ([EmployeeID] = @Original_EmployeeID) AND ([VendorID] = @Original_VendorID) AND ([PickupDate] = @Original_PickupDate) AND ((@IsNull_ReturnedDate = 1 AND [ReturnedDate] IS NULL) OR ([ReturnedDate] = @Original_ReturnedDate)) AND ([NoOfDaysRequested] = @Original_NoOfDaysRequested) AND ([TotalNoOfDays] = @Original_TotalNoOfDays) AND ([TotalCost] = @Original_TotalCost));
-SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate, ReturnedDate, NoOfDaysRequested, TotalNoOfDays, TotalCost FROM rentaltracking WHERE (TransactionID = @TransactionID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[rentaltracking] SET [RequestingDate] = @RequestingDate, [PONumber] = @PONumber, [EmployeeID] = @EmployeeID, [VendorID] = @VendorID, [PickupDate] = @PickupDate, [ReturnedDate] = @ReturnedDate, [NoOfDaysRequested] = @NoOfDaysRequested, [TotalNoOfDays] = @TotalNoOfDays, [TotalCost] = @TotalCost, [ExpirationDate] = @ExpirationDate, [ProjectID] = @ProjectID, [ProjectedCost] = @ProjectedCost WHERE (([TransactionID] = @Original_TransactionID) AND ([RequestingDate] = @Original_RequestingDate) AND ([EmployeeID] = @Original_EmployeeID) AND ([VendorID] = @Original_VendorID) AND ([PickupDate] = @Original_PickupDate) AND ((@IsNull_ReturnedDate = 1 AND [ReturnedDate] IS NULL) OR ([ReturnedDate] = @Original_ReturnedDate)) AND ([NoOfDaysRequested] = @Original_NoOfDaysRequested) AND ([TotalNoOfDays] = @Original_TotalNoOfDays) AND ([TotalCost] = @Original_TotalCost) AND ([ExpirationDate] = @Original_ExpirationDate) AND ([ProjectID] = @Original_ProjectID) AND ([ProjectedCost] = @Original_ProjectedCost));
+SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate, ReturnedDate, NoOfDaysRequested, TotalNoOfDays, TotalCost, ExpirationDate, ProjectID, ProjectedCost FROM rentaltracking WHERE (TransactionID = @TransactionID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestingDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VendorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VendorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PickupDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickupDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1023,9 +1126,11 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoOfDaysRequested", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoOfDaysRequested", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalNoOfDays", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalNoOfDays", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "TotalCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpirationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjectedCost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "ProjectedCost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TransactionID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RequestingDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RequestingDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PONumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VendorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VendorID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PickupDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickupDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1034,6 +1139,9 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoOfDaysRequested", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoOfDaysRequested", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalNoOfDays", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalNoOfDays", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalCost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "TotalCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpirationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProjectedCost", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "ProjectedCost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TransactionID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TransactionID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1051,8 +1159,8 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate," +
-                " ReturnedDate, NoOfDaysRequested, TotalNoOfDays, TotalCost FROM dbo.rentaltracki" +
-                "ng";
+                " ReturnedDate, NoOfDaysRequested, TotalNoOfDays, TotalCost, ExpirationDate, Proj" +
+                "ectID, ProjectedCost FROM dbo.rentaltracking";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1113,24 +1221,26 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_TransactionID, System.DateTime Original_RequestingDate, int Original_PONumber, int Original_EmployeeID, int Original_VendorID, System.DateTime Original_PickupDate, global::System.Nullable<global::System.DateTime> Original_ReturnedDate, int Original_NoOfDaysRequested, int Original_TotalNoOfDays, decimal Original_TotalCost) {
+        public virtual int Delete(int Original_TransactionID, System.DateTime Original_RequestingDate, int Original_EmployeeID, int Original_VendorID, System.DateTime Original_PickupDate, global::System.Nullable<global::System.DateTime> Original_ReturnedDate, int Original_NoOfDaysRequested, int Original_TotalNoOfDays, decimal Original_TotalCost, System.DateTime Original_ExpirationDate, int Original_ProjectID, decimal Original_ProjectedCost) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_TransactionID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_RequestingDate));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_PONumber));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_EmployeeID));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_VendorID));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_PickupDate));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_EmployeeID));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_VendorID));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_PickupDate));
             if ((Original_ReturnedDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_ReturnedDate.Value));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_ReturnedDate.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_NoOfDaysRequested));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_TotalNoOfDays));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_TotalCost));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_NoOfDaysRequested));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_TotalNoOfDays));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_TotalCost));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_ExpirationDate));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_ProjectID));
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_ProjectedCost));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1151,9 +1261,14 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime RequestingDate, int PONumber, int EmployeeID, int VendorID, System.DateTime PickupDate, global::System.Nullable<global::System.DateTime> ReturnedDate, int NoOfDaysRequested, int TotalNoOfDays, decimal TotalCost) {
+        public virtual int Insert(System.DateTime RequestingDate, string PONumber, int EmployeeID, int VendorID, System.DateTime PickupDate, global::System.Nullable<global::System.DateTime> ReturnedDate, int NoOfDaysRequested, int TotalNoOfDays, decimal TotalCost, System.DateTime ExpirationDate, int ProjectID, decimal ProjectedCost) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(RequestingDate));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PONumber));
+            if ((PONumber == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PONumber));
+            }
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(EmployeeID));
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(VendorID));
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PickupDate));
@@ -1166,6 +1281,9 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
             this.Adapter.InsertCommand.Parameters[6].Value = ((int)(NoOfDaysRequested));
             this.Adapter.InsertCommand.Parameters[7].Value = ((int)(TotalNoOfDays));
             this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(TotalCost));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(ExpirationDate));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(ProjectID));
+            this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(ProjectedCost));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1188,7 +1306,7 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     System.DateTime RequestingDate, 
-                    int PONumber, 
+                    string PONumber, 
                     int EmployeeID, 
                     int VendorID, 
                     System.DateTime PickupDate, 
@@ -1196,9 +1314,11 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
                     int NoOfDaysRequested, 
                     int TotalNoOfDays, 
                     decimal TotalCost, 
+                    System.DateTime ExpirationDate, 
+                    int ProjectID, 
+                    decimal ProjectedCost, 
                     int Original_TransactionID, 
                     System.DateTime Original_RequestingDate, 
-                    int Original_PONumber, 
                     int Original_EmployeeID, 
                     int Original_VendorID, 
                     System.DateTime Original_PickupDate, 
@@ -1206,9 +1326,17 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
                     int Original_NoOfDaysRequested, 
                     int Original_TotalNoOfDays, 
                     decimal Original_TotalCost, 
+                    System.DateTime Original_ExpirationDate, 
+                    int Original_ProjectID, 
+                    decimal Original_ProjectedCost, 
                     int TransactionID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(RequestingDate));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PONumber));
+            if ((PONumber == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PONumber));
+            }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(EmployeeID));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(VendorID));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PickupDate));
@@ -1221,24 +1349,29 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(NoOfDaysRequested));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(TotalNoOfDays));
             this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(TotalCost));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_TransactionID));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_RequestingDate));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_PONumber));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_EmployeeID));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_VendorID));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_PickupDate));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(ExpirationDate));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(ProjectID));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(ProjectedCost));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_TransactionID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_RequestingDate));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_EmployeeID));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_VendorID));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_PickupDate));
             if ((Original_ReturnedDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_ReturnedDate.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_ReturnedDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_NoOfDaysRequested));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_TotalNoOfDays));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_TotalCost));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(TransactionID));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_NoOfDaysRequested));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_TotalNoOfDays));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_TotalCost));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_ExpirationDate));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_ProjectID));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((decimal)(Original_ProjectedCost));
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(TransactionID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1261,7 +1394,7 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     System.DateTime RequestingDate, 
-                    int PONumber, 
+                    string PONumber, 
                     int EmployeeID, 
                     int VendorID, 
                     System.DateTime PickupDate, 
@@ -1269,17 +1402,22 @@ SELECT TransactionID, RequestingDate, PONumber, EmployeeID, VendorID, PickupDate
                     int NoOfDaysRequested, 
                     int TotalNoOfDays, 
                     decimal TotalCost, 
+                    System.DateTime ExpirationDate, 
+                    int ProjectID, 
+                    decimal ProjectedCost, 
                     int Original_TransactionID, 
                     System.DateTime Original_RequestingDate, 
-                    int Original_PONumber, 
                     int Original_EmployeeID, 
                     int Original_VendorID, 
                     System.DateTime Original_PickupDate, 
                     global::System.Nullable<global::System.DateTime> Original_ReturnedDate, 
                     int Original_NoOfDaysRequested, 
                     int Original_TotalNoOfDays, 
-                    decimal Original_TotalCost) {
-            return this.Update(RequestingDate, PONumber, EmployeeID, VendorID, PickupDate, ReturnedDate, NoOfDaysRequested, TotalNoOfDays, TotalCost, Original_TransactionID, Original_RequestingDate, Original_PONumber, Original_EmployeeID, Original_VendorID, Original_PickupDate, Original_ReturnedDate, Original_NoOfDaysRequested, Original_TotalNoOfDays, Original_TotalCost, Original_TransactionID);
+                    decimal Original_TotalCost, 
+                    System.DateTime Original_ExpirationDate, 
+                    int Original_ProjectID, 
+                    decimal Original_ProjectedCost) {
+            return this.Update(RequestingDate, PONumber, EmployeeID, VendorID, PickupDate, ReturnedDate, NoOfDaysRequested, TotalNoOfDays, TotalCost, ExpirationDate, ProjectID, ProjectedCost, Original_TransactionID, Original_RequestingDate, Original_EmployeeID, Original_VendorID, Original_PickupDate, Original_ReturnedDate, Original_NoOfDaysRequested, Original_TotalNoOfDays, Original_TotalCost, Original_ExpirationDate, Original_ProjectID, Original_ProjectedCost, Original_TransactionID);
         }
     }
     

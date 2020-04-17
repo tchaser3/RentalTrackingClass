@@ -47,7 +47,13 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TransactionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnTransactionID" msprop:Generator_ColumnPropNameInRow="TransactionID" msprop:Generator_ColumnPropNameInTable="TransactionIDColumn" msprop:Generator_UserColumnName="TransactionID" type="xs:int" />
-              <xs:element name="PONumber" msprop:Generator_ColumnVarNameInTable="columnPONumber" msprop:Generator_ColumnPropNameInRow="PONumber" msprop:Generator_ColumnPropNameInTable="PONumberColumn" msprop:Generator_UserColumnName="PONumber" type="xs:int" />
+              <xs:element name="PONumber" msprop:Generator_ColumnVarNameInTable="columnPONumber" msprop:Generator_ColumnPropNameInRow="PONumber" msprop:Generator_ColumnPropNameInTable="PONumberColumn" msprop:Generator_UserColumnName="PONumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="RequestingDate" msprop:Generator_ColumnVarNameInTable="columnRequestingDate" msprop:Generator_ColumnPropNameInRow="RequestingDate" msprop:Generator_ColumnPropNameInTable="RequestingDateColumn" msprop:Generator_UserColumnName="RequestingDate" type="xs:dateTime" />
               <xs:element name="RentalPartNo" msprop:Generator_ColumnVarNameInTable="columnRentalPartNo" msprop:Generator_ColumnPropNameInRow="RentalPartNo" msprop:Generator_ColumnPropNameInTable="RentalPartNoColumn" msprop:Generator_UserColumnName="RentalPartNo">
                 <xs:simpleType>

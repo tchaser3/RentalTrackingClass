@@ -373,13 +373,13 @@ namespace RentalTrackingDLL
 
             return aFindRentalTransactionsCloseDateDataSet;
         }
-        public FindRentalTrackingTransactionsByPONumberDataSet FindRentalTrackingTransactionByPONumber(int intPONumber)
+        public FindRentalTrackingTransactionsByPONumberDataSet FindRentalTrackingTransactionByPONumber(string strPONumber)
         {
             try
             {
                 aFindRentalTrackingTransactionByPONumberDataSet = new FindRentalTrackingTransactionsByPONumberDataSet();
                 aFindRentalTrackingTransactionByPONumberTableAdapter = new FindRentalTrackingTransactionsByPONumberDataSetTableAdapters.FindRentalTrackingTransactionByPONumberTableAdapter();
-                aFindRentalTrackingTransactionByPONumberTableAdapter.Fill(aFindRentalTrackingTransactionByPONumberDataSet.FindRentalTrackingTransactionByPONumber, intPONumber);
+                aFindRentalTrackingTransactionByPONumberTableAdapter.Fill(aFindRentalTrackingTransactionByPONumberDataSet.FindRentalTrackingTransactionByPONumber, strPONumber);
             }
             catch (Exception Ex)
             {
@@ -406,14 +406,14 @@ namespace RentalTrackingDLL
 
             return blnFatalError;
         }
-        public bool InsertRentalTrackingTransaction(DateTime datRequestingDate, int intPONumber, int intEmployeeID, int intVendorID, DateTime datPickupDate, DateTime datExpirationDate, int intRequestedDays, decimal decTotalCost, int intProjectID, decimal decProjectedCost)
+        public bool InsertRentalTrackingTransaction(DateTime datRequestingDate, string strPONumber, int intEmployeeID, int intVendorID, DateTime datPickupDate, DateTime datExpirationDate, int intRequestedDays, decimal decTotalCost, int intProjectID, decimal decProjectedCost)
         {
             bool blnFatalError = false;
 
             try
             {
                 aInsertRentalTrackingTransactionTableAdapter = new InsertRentalTrackingTransactionEntryTableAdapters.QueriesTableAdapter();
-                aInsertRentalTrackingTransactionTableAdapter.InsertRentalTrackingTransaction(datRequestingDate, intPONumber, intEmployeeID, intVendorID, datPickupDate, datExpirationDate, intRequestedDays, decTotalCost, intProjectID, decProjectedCost);
+                aInsertRentalTrackingTransactionTableAdapter.InsertRentalTrackingTransaction(datRequestingDate, strPONumber, intEmployeeID, intVendorID, datPickupDate, datExpirationDate, intRequestedDays, decTotalCost, intProjectID, decProjectedCost);
             }
             catch (Exception Ex)
             {

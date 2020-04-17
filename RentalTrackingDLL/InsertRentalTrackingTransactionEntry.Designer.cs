@@ -275,7 +275,7 @@ namespace RentalTrackingDLL.InsertRentalTrackingTransactionEntryTableAdapters {
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestingDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VendorID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PickupDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -289,7 +289,7 @@ namespace RentalTrackingDLL.InsertRentalTrackingTransactionEntryTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertRentalTrackingTransaction(global::System.Nullable<global::System.DateTime> RequestingDate, global::System.Nullable<int> PONumber, global::System.Nullable<int> EmployeeID, global::System.Nullable<int> VendorID, global::System.Nullable<global::System.DateTime> PickupDate, global::System.Nullable<global::System.DateTime> ExpirationDate, global::System.Nullable<int> NoOfDaysRequested, global::System.Nullable<decimal> TotalCost, global::System.Nullable<int> ProjectID, global::System.Nullable<decimal> ProjectedCost) {
+        public virtual int InsertRentalTrackingTransaction(global::System.Nullable<global::System.DateTime> RequestingDate, string PONumber, global::System.Nullable<int> EmployeeID, global::System.Nullable<int> VendorID, global::System.Nullable<global::System.DateTime> PickupDate, global::System.Nullable<global::System.DateTime> ExpirationDate, global::System.Nullable<int> NoOfDaysRequested, global::System.Nullable<decimal> TotalCost, global::System.Nullable<int> ProjectID, global::System.Nullable<decimal> ProjectedCost) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
             if ((RequestingDate.HasValue == true)) {
                 command.Parameters[1].Value = ((System.DateTime)(RequestingDate.Value));
@@ -297,11 +297,11 @@ namespace RentalTrackingDLL.InsertRentalTrackingTransactionEntryTableAdapters {
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((PONumber.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(PONumber.Value));
+            if ((PONumber == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
+                command.Parameters[2].Value = ((string)(PONumber));
             }
             if ((EmployeeID.HasValue == true)) {
                 command.Parameters[3].Value = ((int)(EmployeeID.Value));

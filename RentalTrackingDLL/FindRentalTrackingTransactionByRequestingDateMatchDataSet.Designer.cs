@@ -509,7 +509,7 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindRentalTrackingTransactionByRequestingDateMatchRow AddFindRentalTrackingTransactionByRequestingDateMatchRow(System.DateTime RequestingDate, int PONumber, int ProjectID, string AssignedProjectID, string ProjectName, int EmployeeID, string FirstName, string LastName, int ManagerID, int VendorID, string VendorName, System.DateTime PickupDate, System.DateTime ExpirationDate, int NoOfDaysRequested, decimal ProjectedCost) {
+            public FindRentalTrackingTransactionByRequestingDateMatchRow AddFindRentalTrackingTransactionByRequestingDateMatchRow(System.DateTime RequestingDate, string PONumber, int ProjectID, string AssignedProjectID, string ProjectName, int EmployeeID, string FirstName, string LastName, int ManagerID, int VendorID, string VendorName, System.DateTime PickupDate, System.DateTime ExpirationDate, int NoOfDaysRequested, decimal ProjectedCost) {
                 FindRentalTrackingTransactionByRequestingDateMatchRow rowFindRentalTrackingTransactionByRequestingDateMatchRow = ((FindRentalTrackingTransactionByRequestingDateMatchRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -582,7 +582,7 @@ namespace RentalTrackingDLL {
                 base.Columns.Add(this.columnTransactionID);
                 this.columnRequestingDate = new global::System.Data.DataColumn("RequestingDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRequestingDate);
-                this.columnPONumber = new global::System.Data.DataColumn("PONumber", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnPONumber = new global::System.Data.DataColumn("PONumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPONumber);
                 this.columnProjectID = new global::System.Data.DataColumn("ProjectID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProjectID);
@@ -617,7 +617,7 @@ namespace RentalTrackingDLL {
                 this.columnTransactionID.ReadOnly = true;
                 this.columnTransactionID.Unique = true;
                 this.columnRequestingDate.AllowDBNull = false;
-                this.columnPONumber.AllowDBNull = false;
+                this.columnPONumber.MaxLength = 2147483647;
                 this.columnProjectID.AllowDBNull = false;
                 this.columnAssignedProjectID.AllowDBNull = false;
                 this.columnAssignedProjectID.MaxLength = 2147483647;
@@ -799,9 +799,15 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int PONumber {
+            public string PONumber {
                 get {
-                    return ((int)(this[this.tableFindRentalTrackingTransactionByRequestingDateMatch.PONumberColumn]));
+                    try {
+                        return ((string)(this[this.tableFindRentalTrackingTransactionByRequestingDateMatch.PONumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PONumber\' in table \'FindRentalTrackingTransactionByRequesti" +
+                                "ngDateMatch\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableFindRentalTrackingTransactionByRequestingDateMatch.PONumberColumn] = value;
@@ -955,6 +961,18 @@ namespace RentalTrackingDLL {
                 set {
                     this[this.tableFindRentalTrackingTransactionByRequestingDateMatch.ProjectedCostColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPONumberNull() {
+                return this.IsNull(this.tableFindRentalTrackingTransactionByRequestingDateMatch.PONumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPONumberNull() {
+                this[this.tableFindRentalTrackingTransactionByRequestingDateMatch.PONumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
