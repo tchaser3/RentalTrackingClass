@@ -279,6 +279,8 @@ namespace RentalTrackingDLL {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class FindRentalTrackingTransactionByPONumberDataTable : global::System.Data.TypedTableBase<FindRentalTrackingTransactionByPONumberRow> {
             
+            private global::System.Data.DataColumn columnTransactionID;
+            
             private global::System.Data.DataColumn columnRequestingDate;
             
             private global::System.Data.DataColumn columnAssignedProjectID;
@@ -334,6 +336,14 @@ namespace RentalTrackingDLL {
             protected FindRentalTrackingTransactionByPONumberDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TransactionIDColumn {
+                get {
+                    return this.columnTransactionID;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -472,6 +482,7 @@ namespace RentalTrackingDLL {
             public FindRentalTrackingTransactionByPONumberRow AddFindRentalTrackingTransactionByPONumberRow(System.DateTime RequestingDate, string AssignedProjectID, string ProjectName, string FirstName, string LastName, string VendorName, System.DateTime PickupDate, System.DateTime ReturnedDate, int NoOfDaysRequested, int TotalNoOfDays, decimal ProjectedCost, decimal TotalCost) {
                 FindRentalTrackingTransactionByPONumberRow rowFindRentalTrackingTransactionByPONumberRow = ((FindRentalTrackingTransactionByPONumberRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
                         RequestingDate,
                         AssignedProjectID,
                         ProjectName,
@@ -491,6 +502,13 @@ namespace RentalTrackingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public FindRentalTrackingTransactionByPONumberRow FindByTransactionID(int TransactionID) {
+                return ((FindRentalTrackingTransactionByPONumberRow)(this.Rows.Find(new object[] {
+                            TransactionID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 FindRentalTrackingTransactionByPONumberDataTable cln = ((FindRentalTrackingTransactionByPONumberDataTable)(base.Clone()));
                 cln.InitVars();
@@ -506,6 +524,7 @@ namespace RentalTrackingDLL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
+                this.columnTransactionID = base.Columns["TransactionID"];
                 this.columnRequestingDate = base.Columns["RequestingDate"];
                 this.columnAssignedProjectID = base.Columns["AssignedProjectID"];
                 this.columnProjectName = base.Columns["ProjectName"];
@@ -523,6 +542,8 @@ namespace RentalTrackingDLL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
+                this.columnTransactionID = new global::System.Data.DataColumn("TransactionID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTransactionID);
                 this.columnRequestingDate = new global::System.Data.DataColumn("RequestingDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRequestingDate);
                 this.columnAssignedProjectID = new global::System.Data.DataColumn("AssignedProjectID", typeof(string), null, global::System.Data.MappingType.Element);
@@ -547,6 +568,12 @@ namespace RentalTrackingDLL {
                 base.Columns.Add(this.columnProjectedCost);
                 this.columnTotalCost = new global::System.Data.DataColumn("TotalCost", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalCost);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnTransactionID}, true));
+                this.columnTransactionID.AutoIncrement = true;
+                this.columnTransactionID.AllowDBNull = false;
+                this.columnTransactionID.ReadOnly = true;
+                this.columnTransactionID.Unique = true;
                 this.columnRequestingDate.AllowDBNull = false;
                 this.columnAssignedProjectID.AllowDBNull = false;
                 this.columnAssignedProjectID.MaxLength = 2147483647;
@@ -701,6 +728,17 @@ namespace RentalTrackingDLL {
             internal FindRentalTrackingTransactionByPONumberRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableFindRentalTrackingTransactionByPONumber = ((FindRentalTrackingTransactionByPONumberDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int TransactionID {
+                get {
+                    return ((int)(this[this.tableFindRentalTrackingTransactionByPONumber.TransactionIDColumn]));
+                }
+                set {
+                    this[this.tableFindRentalTrackingTransactionByPONumber.TransactionIDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1013,6 +1051,7 @@ namespace RentalTrackingDLL.FindRentalTrackingTransactionsByPONumberDataSetTable
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "FindRentalTrackingTransactionByPONumber";
+            tableMapping.ColumnMappings.Add("TransactionID", "TransactionID");
             tableMapping.ColumnMappings.Add("RequestingDate", "RequestingDate");
             tableMapping.ColumnMappings.Add("AssignedProjectID", "AssignedProjectID");
             tableMapping.ColumnMappings.Add("ProjectName", "ProjectName");

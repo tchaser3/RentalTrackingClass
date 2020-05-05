@@ -22,6 +22,7 @@
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="TransactionID" DataSetColumn="TransactionID" />
               <Mapping SourceColumn="RequestingDate" DataSetColumn="RequestingDate" />
               <Mapping SourceColumn="AssignedProjectID" DataSetColumn="AssignedProjectID" />
               <Mapping SourceColumn="ProjectName" DataSetColumn="ProjectName" />
@@ -48,6 +49,7 @@
         <xs:element name="FindRentalTrackingTransactionByPONumber" msprop:Generator_TableClassName="FindRentalTrackingTransactionByPONumberDataTable" msprop:Generator_TableVarName="tableFindRentalTrackingTransactionByPONumber" msprop:Generator_TablePropName="FindRentalTrackingTransactionByPONumber" msprop:Generator_RowDeletingName="FindRentalTrackingTransactionByPONumberRowDeleting" msprop:Generator_RowChangingName="FindRentalTrackingTransactionByPONumberRowChanging" msprop:Generator_RowEvHandlerName="FindRentalTrackingTransactionByPONumberRowChangeEventHandler" msprop:Generator_RowDeletedName="FindRentalTrackingTransactionByPONumberRowDeleted" msprop:Generator_UserTableName="FindRentalTrackingTransactionByPONumber" msprop:Generator_RowChangedName="FindRentalTrackingTransactionByPONumberRowChanged" msprop:Generator_RowEvArgName="FindRentalTrackingTransactionByPONumberRowChangeEvent" msprop:Generator_RowClassName="FindRentalTrackingTransactionByPONumberRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="TransactionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnTransactionID" msprop:Generator_ColumnPropNameInRow="TransactionID" msprop:Generator_ColumnPropNameInTable="TransactionIDColumn" msprop:Generator_UserColumnName="TransactionID" type="xs:int" />
               <xs:element name="RequestingDate" msprop:Generator_ColumnVarNameInTable="columnRequestingDate" msprop:Generator_ColumnPropNameInRow="RequestingDate" msprop:Generator_ColumnPropNameInTable="RequestingDateColumn" msprop:Generator_UserColumnName="RequestingDate" type="xs:dateTime" />
               <xs:element name="AssignedProjectID" msprop:Generator_ColumnVarNameInTable="columnAssignedProjectID" msprop:Generator_ColumnPropNameInRow="AssignedProjectID" msprop:Generator_ColumnPropNameInTable="AssignedProjectIDColumn" msprop:Generator_UserColumnName="AssignedProjectID">
                 <xs:simpleType>
@@ -95,5 +97,9 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:FindRentalTrackingTransactionByPONumber" />
+      <xs:field xpath="mstns:TransactionID" />
+    </xs:unique>
   </xs:element>
 </xs:schema>
