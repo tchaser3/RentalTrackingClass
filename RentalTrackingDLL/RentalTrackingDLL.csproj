@@ -89,6 +89,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindRentalTransactionByProjectIDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FindRentalTransactionByTransactionIDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindRentalTransactionByTransactionIDDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FindRentalTransactionsCloseDateDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,6 +257,17 @@
     </None>
     <None Include="FindRentalTransactionByProjectIDDataSet.xss">
       <DependentUpon>FindRentalTransactionByProjectIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTransactionByTransactionIDDataSet.xsc">
+      <DependentUpon>FindRentalTransactionByTransactionIDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindRentalTransactionByTransactionIDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindRentalTransactionByTransactionIDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindRentalTransactionByTransactionIDDataSet.xss">
+      <DependentUpon>FindRentalTransactionByTransactionIDDataSet.xsd</DependentUpon>
     </None>
     <None Include="FindRentalTransactionsCloseDateDataSet.xsc">
       <DependentUpon>FindRentalTransactionsCloseDateDataSet.xsd</DependentUpon>

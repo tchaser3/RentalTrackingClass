@@ -72,6 +72,24 @@ namespace RentalTrackingDLL
         FindRentalTrackingTransactionByRequestingDateMatchDataSet aFindRentalTrackingTransactionByRequestingDateMatchDataSet;
         FindRentalTrackingTransactionByRequestingDateMatchDataSetTableAdapters.FindRentalTrackingTransactionByRequestingDateMatchTableAdapter aFindRentalTrackingTransactionByRequestingDateMatchTableAdapter;
 
+        FindRentalTransactionByTransactionIDDataSet aFindRentalTransactionByTransactionIDDataSet;
+        FindRentalTransactionByTransactionIDDataSetTableAdapters.FindRentalTransactionByTransactionIDTableAdapter aFindRentalTransactionByTransactionIDTableAdapter;
+
+        public FindRentalTransactionByTransactionIDDataSet FindRentalTransactionByTransactionID(int intTransactionID)
+        {
+            try
+            {
+                aFindRentalTransactionByTransactionIDDataSet = new FindRentalTransactionByTransactionIDDataSet();
+                aFindRentalTransactionByTransactionIDTableAdapter = new FindRentalTransactionByTransactionIDDataSetTableAdapters.FindRentalTransactionByTransactionIDTableAdapter();
+                aFindRentalTransactionByTransactionIDTableAdapter.Fill(aFindRentalTransactionByTransactionIDDataSet.FindRentalTransactionByTransactionID, intTransactionID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Rental Transaction By Transaction ID " + Ex.Message);
+            }
+
+            return aFindRentalTransactionByTransactionIDDataSet;
+        }
         public FindRentalTrackingTransactionByRequestingDateMatchDataSet FindRentalTrackingTransactionByRequestingDateMatch(DateTime datRequestingDate)
         {
             try
