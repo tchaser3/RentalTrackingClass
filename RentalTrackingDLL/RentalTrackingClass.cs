@@ -371,7 +371,7 @@ namespace RentalTrackingDLL
             }
             catch (Exception Ex)
             {
-                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Rental Tracking By Project ID " + Ex.Message);
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Rental Tracking By Project ID - This is the one " + Ex.Message);
             }
 
             return aFindRentalTransactionByProjectIDDataSet;

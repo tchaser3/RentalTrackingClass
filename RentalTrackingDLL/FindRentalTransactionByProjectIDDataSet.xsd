@@ -22,6 +22,7 @@
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="TransactionID" DataSetColumn="TransactionID" />
               <Mapping SourceColumn="PONumber" DataSetColumn="PONumber" />
               <Mapping SourceColumn="RequestingDate" DataSetColumn="RequestingDate" />
               <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
@@ -31,7 +32,6 @@
               <Mapping SourceColumn="ExpirationDate" DataSetColumn="ExpirationDate" />
               <Mapping SourceColumn="ReturnedDate" DataSetColumn="ReturnedDate" />
               <Mapping SourceColumn="ProjectedCost" DataSetColumn="ProjectedCost" />
-              <Mapping SourceColumn="TransactionID" DataSetColumn="TransactionID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -43,10 +43,17 @@
   <xs:element name="FindRentalTransactionByProjectIDDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FindRentalTransactionByProjectIDDataSet" msprop:Generator_UserDSName="FindRentalTransactionByProjectIDDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FindRentalTransasctionByProjectID" msprop:Generator_TableClassName="FindRentalTransasctionByProjectIDDataTable" msprop:Generator_TableVarName="tableFindRentalTransasctionByProjectID" msprop:Generator_RowChangedName="FindRentalTransasctionByProjectIDRowChanged" msprop:Generator_TablePropName="FindRentalTransasctionByProjectID" msprop:Generator_RowDeletingName="FindRentalTransasctionByProjectIDRowDeleting" msprop:Generator_RowChangingName="FindRentalTransasctionByProjectIDRowChanging" msprop:Generator_RowEvHandlerName="FindRentalTransasctionByProjectIDRowChangeEventHandler" msprop:Generator_RowDeletedName="FindRentalTransasctionByProjectIDRowDeleted" msprop:Generator_RowClassName="FindRentalTransasctionByProjectIDRow" msprop:Generator_UserTableName="FindRentalTransasctionByProjectID" msprop:Generator_RowEvArgName="FindRentalTransasctionByProjectIDRowChangeEvent">
+        <xs:element name="FindRentalTransasctionByProjectID" msprop:Generator_TableClassName="FindRentalTransasctionByProjectIDDataTable" msprop:Generator_TableVarName="tableFindRentalTransasctionByProjectID" msprop:Generator_TablePropName="FindRentalTransasctionByProjectID" msprop:Generator_RowDeletingName="FindRentalTransasctionByProjectIDRowDeleting" msprop:Generator_RowChangingName="FindRentalTransasctionByProjectIDRowChanging" msprop:Generator_RowEvHandlerName="FindRentalTransasctionByProjectIDRowChangeEventHandler" msprop:Generator_RowDeletedName="FindRentalTransasctionByProjectIDRowDeleted" msprop:Generator_UserTableName="FindRentalTransasctionByProjectID" msprop:Generator_RowChangedName="FindRentalTransasctionByProjectIDRowChanged" msprop:Generator_RowEvArgName="FindRentalTransasctionByProjectIDRowChangeEvent" msprop:Generator_RowClassName="FindRentalTransasctionByProjectIDRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="PONumber" msprop:Generator_ColumnVarNameInTable="columnPONumber" msprop:Generator_ColumnPropNameInRow="PONumber" msprop:Generator_ColumnPropNameInTable="PONumberColumn" msprop:Generator_UserColumnName="PONumber" type="xs:int" />
+              <xs:element name="TransactionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnTransactionID" msprop:Generator_ColumnPropNameInRow="TransactionID" msprop:Generator_ColumnPropNameInTable="TransactionIDColumn" msprop:Generator_UserColumnName="TransactionID" type="xs:int" />
+              <xs:element name="PONumber" msprop:Generator_ColumnVarNameInTable="columnPONumber" msprop:Generator_ColumnPropNameInRow="PONumber" msprop:Generator_ColumnPropNameInTable="PONumberColumn" msprop:Generator_UserColumnName="PONumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="RequestingDate" msprop:Generator_ColumnVarNameInTable="columnRequestingDate" msprop:Generator_ColumnPropNameInRow="RequestingDate" msprop:Generator_ColumnPropNameInTable="RequestingDateColumn" msprop:Generator_UserColumnName="RequestingDate" type="xs:dateTime" />
               <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
                 <xs:simpleType>
@@ -73,7 +80,6 @@
               <xs:element name="ExpirationDate" msprop:Generator_ColumnVarNameInTable="columnExpirationDate" msprop:Generator_ColumnPropNameInRow="ExpirationDate" msprop:Generator_ColumnPropNameInTable="ExpirationDateColumn" msprop:Generator_UserColumnName="ExpirationDate" type="xs:dateTime" />
               <xs:element name="ReturnedDate" msprop:Generator_ColumnVarNameInTable="columnReturnedDate" msprop:Generator_ColumnPropNameInRow="ReturnedDate" msprop:Generator_ColumnPropNameInTable="ReturnedDateColumn" msprop:Generator_UserColumnName="ReturnedDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="ProjectedCost" msprop:Generator_ColumnVarNameInTable="columnProjectedCost" msprop:Generator_ColumnPropNameInRow="ProjectedCost" msprop:Generator_ColumnPropNameInTable="ProjectedCostColumn" msprop:Generator_UserColumnName="ProjectedCost" type="xs:decimal" />
-              <xs:element name="TransactionID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTransactionID" msprop:Generator_ColumnPropNameInRow="TransactionID" msprop:Generator_ColumnPropNameInTable="TransactionIDColumn" msprop:Generator_UserColumnName="TransactionID" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
