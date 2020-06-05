@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using NewEventLogDLL;
@@ -75,6 +76,42 @@ namespace RentalTrackingDLL
         FindRentalTransactionByTransactionIDDataSet aFindRentalTransactionByTransactionIDDataSet;
         FindRentalTransactionByTransactionIDDataSetTableAdapters.FindRentalTransactionByTransactionIDTableAdapter aFindRentalTransactionByTransactionIDTableAdapter;
 
+        FindExpiringRentalTrackingDataSet aFindExpiringRentalTrackingDataSet;
+        FindExpiringRentalTrackingDataSetTableAdapters.FindExpiringRentalTrackingTableAdapter aFindExpiringRentalTrackingTableAdapter;
+
+        FindOpenRentalTrackingDataSet aFindOpenRentalTrackingDataSet;
+        FindOpenRentalTrackingDataSetTableAdapters.FindOpenRentalTrackingTableAdapter aFindOpenRentalTrackingTableAdapter;
+
+        public FindOpenRentalTrackingDataSet FindOpenRentalTracking()
+        {
+            try
+            {
+                aFindOpenRentalTrackingDataSet = new FindOpenRentalTrackingDataSet();
+                aFindOpenRentalTrackingTableAdapter = new FindOpenRentalTrackingDataSetTableAdapters.FindOpenRentalTrackingTableAdapter();
+                aFindOpenRentalTrackingTableAdapter.Fill(aFindOpenRentalTrackingDataSet.FindOpenRentalTracking);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Open Rental Tracking " + Ex.Message);
+            }
+
+            return aFindOpenRentalTrackingDataSet;
+        }
+        public FindExpiringRentalTrackingDataSet FindExpiringRentalTracking(DateTime datTransactionDate)
+        {
+            try
+            {
+                aFindExpiringRentalTrackingDataSet = new FindExpiringRentalTrackingDataSet();
+                aFindExpiringRentalTrackingTableAdapter = new FindExpiringRentalTrackingDataSetTableAdapters.FindExpiringRentalTrackingTableAdapter();
+                aFindExpiringRentalTrackingTableAdapter.Fill(aFindExpiringRentalTrackingDataSet.FindExpiringRentalTracking, datTransactionDate);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Rental Tracking Class // Find Expiring Rental Tracking " + Ex.Message);
+            }
+
+            return aFindExpiringRentalTrackingDataSet;
+        }
         public FindRentalTransactionByTransactionIDDataSet FindRentalTransactionByTransactionID(int intTransactionID)
         {
             try
